@@ -323,7 +323,7 @@
 <div class="flex justify-center mb-2">
   <!-- icono leaf -->
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-       class="h-7 w-7 text-[#1A55CF]" fill="none" stroke="currentColor" stroke-width="2">
+        class="h-7 w-7 text-[#1A55CF]" fill="none" stroke="currentColor" stroke-width="2">
     <path stroke-linecap="round" stroke-linejoin="round"
           d="M5 21c8 0 14-6 14-14 0 0-6 0-10 4S5 21 5 21z" />
   </svg>
@@ -361,6 +361,142 @@
 
   </div>
 </section>
+
+    <!------------------------------ CADA VEZ MAS CONECTADOS -------------------------------------->
+
+<!-- ESTAMOS CADA VEZ MÁS CONECTADOS -->
+<section class="relative w-full bg-cover bg-center bg-no-repeat"
+          style="background-image: url('./assets/img/hero2.webp');">
+  <!-- degradé inferior sutil -->
+  <div class="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-b from-transparent to-[#2E73E3]/20"></div>
+
+  <!-- Contenido -->
+  <div class="relative max-w-7xl mx-auto px-8 lg:px-20 py-24">
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Columna texto -->
+      <div class="max-w-2xl pr-6 md:pr-16 bg-white/80 md:bg-transparent rounded-xl md:rounded-none">
+        <h2 class="text-3xl md:text-4xl font-extrabold leading-tight text-[#0E1730]">
+          ESTAMOS CADA VEZ<br class="hidden sm:block" />
+          MÁS CONECTADOS
+        </h2>
+        <p class="mt-2 text-xl text-slate-600">para darte el mejor servicio</p>
+
+        <div class="mt-8 space-y-5 text-slate-700">
+          <p>
+            <span class="font-semibold">Ofrecemos atención personalizada</span>
+            a través de teléfono, correo electrónico y WhatsApp para que puedas
+            ponerte en contacto con nosotros y brindar el apoyo que necesita tu empresa.
+          </p>
+          <p>
+            <span class="font-semibold">Nuestros técnicos reciben capacitación certificada continua</span>
+            para hacer frente a cualquier situación de manera efectiva.
+          </p>
+          <p>
+            <span class="font-semibold">Contamos con una APP de uso interno exclusiva para nuestro personal,</span>
+            que permite enviar de manera rápida la constancia del servicio realizado
+            para la tranquilidad de tu empresa.
+          </p>
+        </div>
+
+        <!-- Botones -->
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#contacto"
+              class="inline-flex items-center justify-center rounded-full bg-[#1A55CF] text-white font-semibold
+                    px-8 py-3.5 shadow-[0_10px_24px_rgba(26,85,207,.35)] hover:brightness-110 transition">
+            Hacé tu consulta
+          </a>
+          <a href="https://wa.me/5491112345678" target="_blank" rel="noopener"
+              class="inline-flex items-center justify-center rounded-full bg-[#1A55CF] text-white font-semibold
+                    px-8 py-3.5 shadow-[0_10px_24px_rgba(26,85,207,.35)] hover:brightness-110 transition">
+            Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Columna vacía para espacio de imagen -->
+      <div class="hidden md:block"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULARIO DE CONTACTO -->
+<form id="contactForm"
+      action="https://formsubmit.co/info@campanafumigaciones.com.ar"
+      method="POST"
+      class="space-y-4">
+
+  <!-- Config ocultas -->
+  <input type="hidden" name="_subject" value="Nuevo mensaje desde la web - Campana Fumigaciones">
+  <input type="hidden" name="_captcha" value="false">
+
+  <label class="block">
+    <input type="text" name="nombre" placeholder="Nombre" required
+            class="w-full bg-white text-slate-800 placeholder-slate-500 px-4 py-3 h-12
+                  rounded-sm border-0 focus:outline-none focus:ring-2 focus:ring-white/60" />
+  </label>
+
+  <label class="block">
+    <input type="email" name="email" placeholder="E-mail" required
+            class="w-full bg-white text-slate-800 placeholder-slate-500 px-4 py-3 h-12
+                  rounded-sm border-0 focus:outline-none focus:ring-2 focus:ring-white/60" />
+  </label>
+
+  <label class="block">
+    <input type="tel" name="telefono" placeholder="Teléfono"
+            class="w-full bg-white text-slate-800 placeholder-slate-500 px-4 py-3 h-12
+                  rounded-sm border-0 focus:outline-none focus:ring-2 focus:ring-white/60" />
+  </label>
+
+  <label class="block">
+    <textarea name="consulta" rows="5" placeholder="Consulta"
+              class="w-full bg-white text-slate-800 placeholder-slate-500 px-4 py-3
+                      rounded-sm border-0 focus:outline-none focus:ring-2 focus:ring-white/60"></textarea>
+  </label>
+
+  <button type="submit"
+          class="mt-2 inline-flex items-center justify-center bg-white text-[#2E73E3]
+                  font-bold tracking-wide px-6 py-3 rounded-sm shadow-sm hover:opacity-95 transition">
+    ENVIAR
+  </button>
+</form>
+
+<!-- Mensaje de éxito oculto con animación -->
+<div id="successMessage"
+      class="hidden mt-6 bg-white text-[#2E73E3] font-semibold p-4 rounded shadow
+            transition-opacity duration-500 opacity-0">
+  ¡Gracias por tu mensaje! Nos pondremos en contacto a la brevedad.
+</div>
+
+<!-- Script de envío y animación -->
+<script>
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('successMessage');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Evita recargar
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        form.classList.add('hidden'); // Oculta el formulario
+        success.classList.remove('hidden'); // Muestra el mensaje
+        // Animación de aparición
+        setTimeout(() => success.classList.add('opacity-100'), 100);
+      } else {
+        alert('Hubo un error al enviar el formulario. Intente nuevamente.');
+      }
+    } catch (error) {
+      alert('Error de conexión. Por favor, intente más tarde.');
+    }
+  });
+</script>
 
 
   <script>
