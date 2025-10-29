@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Campana Fumigaciones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { blue: '#1A55CF', dark: '#0E2F6B' },
+          },
+          fontFamily: { sans: ['Montserrat','system-ui','ui-sans-serif'] },
+          boxShadow: { soft: '0 10px 30px rgba(0,0,0,.08)' }
+        }
+      }
+    }
+  </script>
+  <style>html{scroll-behavior:smooth}</style>
+</head>
+<body class="font-sans antialiased text-slate-900">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="h-16 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3">
+          <img src="/assets/img/logo.webp" alt="Campana Fumigaciones" class="h-8 w-auto">
+        </a>
+
+        <!-- Nav desktop -->
+        <nav class="hidden md:flex items-center gap-8 text-[15px] font-semibold tracking-wide">
+          <a href="#servicios" class="hover:text-brand.blue">SERVICIOS</a>
+          <a href="#faq" class="hover:text-brand.blue">PREGUNTAS FRECUENTES</a>
+          <a href="#contacto" class="hover:text-brand.blue">CONTACTO</a>
+          <a href="https://wa.me/5491112345678" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-slate-300 text-brand.blue hover:bg-slate-50"
+             title="WhatsApp">
+            <!-- ícono whatsapp -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                 class="h-4 w-4 fill-current"><path d="M20.52 3.48A11.77 11.77 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.1.55 4.07 1.52 5.78L0 24l6.36-1.66A11.95 11.95 0 1 0 20.52 3.48ZM12 22a9.96 9.96 0 0 1-5.1-1.39l-.37-.22-3.64.95.97-3.53-.24-.38A10 10 0 1 1 12 22Zm5.03-6.67c-.28-.14-1.63-.81-1.88-.9s-.44-.14-.63.14-.72.9-.89 1.08-.33.21-.61.07-1.18-.43-2.24-1.37-1.39-1.66-1.55-1.94-.02-.43.12-.57c.12-.12.28-.33.42-.49s.19-.28.28-.47c.09-.19.05-.35-.02-.49s-.63-1.51-.87-2.07-.47-.47-.64-.48h-.54c-.19 0-.49.07-.74.35s-.97.95-.97 2.31 1 2.68 1.14 2.86c.14.19 1.96 3 4.74 4.1.66.29 1.17.46 1.57.59.66.21 1.26.18 1.73.11.53-.08 1.63-.67 1.86-1.31.23-.64.23-1.19.16-1.31-.07-.12-.26-.19-.54-.33Z"/></svg>
+          </a>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="btn-menu" class="md:hidden inline-flex items-center justify-center p-2.5 rounded-lg border border-slate-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden hidden pb-4">
+        <nav class="flex flex-col gap-2 text-sm font-semibold">
+          <a href="#servicios" class="px-3 py-2 rounded-lg hover:bg-slate-50">SERVICIOS</a>
+          <a href="#faq" class="px-3 py-2 rounded-lg hover:bg-slate-50">PREGUNTAS FRECUENTES</a>
+          <a href="#contacto" class="px-3 py-2 rounded-lg hover:bg-slate-50">CONTACTO</a>
+          <a href="https://wa.me/5491112345678" target="_blank" rel="noopener"
+             class="mt-2 inline-flex items-center justify-center gap-2 bg-brand.blue text-white px-4 py-2 rounded-full">
+             WhatsApp
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO con fondo único + overlay azul a la izquierda -->
+<!-- HERO con degradé celeste-azul -->
+<section class="relative">
+  <!-- fondo con overlay -->
+  <div class="h-[560px] w-full bg-cover bg-center relative" 
+       style="background-image:url('./assets/img/hero.webp');">
+    <!-- overlay azul degradado -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#1A55CF]/95 via-[#1A55CF]/80 to-transparent"></div>
+
+    <!-- contenido -->
+    <div class="absolute inset-0 flex items-center">
+      <div class="max-w-7xl mx-auto w-full px-6 lg:px-20">
+        <div class="max-w-xl text-white">
+          <h1 class="text-[2.0rem] sm:text-4xl lg:text-[1.8rem] font-extrabold leading-snug">
+            CONTROL DE PLAGAS<br/>
+            LIMPIEZA DE TANQUES DE AGUA
+          </h1>
+
+          <p class="mt-2 text-white/80 font-semibold tracking-wide uppercase text-[15px]">
+            PROVINCIA DE BS. AS – C.A.B.A.
+          </p>
+
+          <p class="mt-6 text-white/90 text-lg leading-relaxed">
+            Soluciones efectivas, resultados garantizados para tu empresa.
+          </p>
+
+          <p class="mt-2 text-white font-semibold">Obtenga su Certificado Oficial</p>
+
+        <div class="mt-7 flex flex-wrap gap-4">
+         <!-- Botón WhatsApp -->
+         <a href="https://wa.me/5491112345678" target="_blank" rel="noopener"
+           class="px-8 py-3 rounded-full border-2 border-white bg-[#1A55CF] text-white font-semibold shadow-md hover:brightness-110 transition">
+           Enviar WhatsApp
+        </a>
+
+        <!-- Botón Llamar ahora -->
+         <a href="tel:+541100000000"
+          class="px-8 py-3 rounded-full border-2 border-white bg-[#1A55CF] text-white font-semibold shadow-md hover:brightness-110 transition">
+          Llamar ahora
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!------------------------------------------------------------------------------>
+  <!-- (acá después iremos agregando las siguientes secciones) -->
+
+  <script>
+    // menú mobile
+    const btnMenu = document.getElementById('btn-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    btnMenu?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  </script>
+</body>
+</html>
