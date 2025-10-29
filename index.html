@@ -420,60 +420,93 @@
 </section>
 
 <!-- FORMULARIO DE CONTACTO -->
-<form id="contactForm"
-      action="https://formsubmit.co/info@campanafumigaciones.com.ar"
-      method="POST"
-      class="space-y-4">
+<!-- CONTACTO (sección completa) -->
+<section id="contacto" class="bg-[#2E73E3] py-16">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <h2 class="text-center text-white text-3xl font-extrabold tracking-wide">
+      CONTACTO
+    </h2>
 
-  <!-- Config ocultas -->
-  <input type="hidden" name="_subject" value="Nuevo mensaje desde la web - Campana Fumigaciones">
-  <input type="hidden" name="_captcha" value="false">
+    <div class="mt-10 grid gap-10 md:grid-cols-[minmax(0,560px)_520px] items-start">
+      <!-- Columna: Formulario -->
+      <div class="max-w-[560px]">
+        <h3 class="text-white font-bold uppercase tracking-wide mb-3">Pedí tu presupuesto</h3>
 
-  <label class="block">
-    <input type="text" name="nombre" placeholder="Nombre" required
-            class="w-full bg-white text-slate-800 placeholder-slate-500 px-4 py-3 h-12
-                  rounded-sm border-0 focus:outline-none focus:ring-2 focus:ring-white/60" />
-  </label>
+        <!-- FORMULARIO DE CONTACTO -->
+        <form id="contactForm"
+              action="https://formsubmit.co/info@campanafumigaciones.com.ar"
+              method="POST"
+              class="space-y-4">
 
-  <label class="block">
-    <input type="email" name="email" placeholder="E-mail" required
-            class="w-full bg-white text-slate-800 placeholder-slate-500 px-4 py-3 h-12
-                  rounded-sm border-0 focus:outline-none focus:ring-2 focus:ring-white/60" />
-  </label>
+          <!-- Config ocultas -->
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde la web - Campana Fumigaciones">
+          <input type="hidden" name="_captcha" value="false">
 
-  <label class="block">
-    <input type="tel" name="telefono" placeholder="Teléfono"
-            class="w-full bg-white text-slate-800 placeholder-slate-500 px-4 py-3 h-12
-                  rounded-sm border-0 focus:outline-none focus:ring-2 focus:ring-white/60" />
-  </label>
+          <label class="block">
+            <input type="text" name="nombre" placeholder="Nombre" required
+                   class="w-full max-w-[560px] bg-white text-slate-800 placeholder-slate-500 px-4 py-3 h-12
+                          rounded-sm border-0 focus:outline-none focus:ring-2 focus:ring-white/60" />
+          </label>
 
-  <label class="block">
-    <textarea name="consulta" rows="5" placeholder="Consulta"
-              class="w-full bg-white text-slate-800 placeholder-slate-500 px-4 py-3
-                      rounded-sm border-0 focus:outline-none focus:ring-2 focus:ring-white/60"></textarea>
-  </label>
+          <label class="block">
+            <input type="email" name="email" placeholder="E-mail" required
+                   class="w-full max-w-[560px] bg-white text-slate-800 placeholder-slate-500 px-4 py-3 h-12
+                          rounded-sm border-0 focus:outline-none focus:ring-2 focus:ring-white/60" />
+          </label>
 
-  <button type="submit"
-          class="mt-2 inline-flex items-center justify-center bg-white text-[#2E73E3]
-                  font-bold tracking-wide px-6 py-3 rounded-sm shadow-sm hover:opacity-95 transition">
-    ENVIAR
-  </button>
-</form>
+          <label class="block">
+            <input type="tel" name="telefono" placeholder="Teléfono"
+                   class="w-full max-w-[560px] bg-white text-slate-800 placeholder-slate-500 px-4 py-3 h-12
+                          rounded-sm border-0 focus:outline-none focus:ring-2 focus:ring-white/60" />
+          </label>
 
-<!-- Mensaje de éxito oculto con animación -->
-<div id="successMessage"
-      class="hidden mt-6 bg-white text-[#2E73E3] font-semibold p-4 rounded shadow
-            transition-opacity duration-500 opacity-0">
-  ¡Gracias por tu mensaje! Nos pondremos en contacto a la brevedad.
-</div>
+          <label class="block">
+            <textarea name="consulta" rows="5" placeholder="Consulta"
+                      class="w-full max-w-[560px] bg-white text-slate-800 placeholder-slate-500 px-4 py-3
+                             rounded-sm border-0 focus:outline-none focus:ring-2 focus:ring-white/60"></textarea>
+          </label>
 
-<!-- Script de envío y animación -->
+          <button type="submit"
+                  class="mt-2 inline-flex items-center justify-center bg-white text-[#2E73E3]
+                         font-bold tracking-wide px-6 py-3 rounded-sm shadow-sm hover:opacity-95 transition">
+            ENVIAR
+          </button>
+        </form>
+
+        <!-- Mensaje de éxito con animación (inicialmente oculto) -->
+        <div id="successMessage"
+             class="hidden mt-6 bg-white text-[#2E73E3] font-semibold p-4 rounded shadow
+                    transition-opacity duration-500 opacity-0">
+          ¡Gracias por tu mensaje! Nos pondremos en contacto a la brevedad.
+        </div>
+      </div>
+
+      <!-- Columna: Mapa -->
+      <div class="max-w-[520px] w-full justify-self-start md:justify-self-end">
+        <h3 class="text-white font-bold uppercase tracking-wide mb-3">Encontranos</h3>
+        <div class="bg-white/10 rounded-sm overflow-hidden">
+          <!-- Reemplazá el src por el embed exacto de tu dirección -->
+          <iframe
+            class="w-full h-[360px]"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.524274885915!2d-58.408!3d-34.564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sParque%20Patricios!5e0!3m2!1ses-419!2sar!4v1690000000000">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Script de envío + animación (ponelo una sola vez, cerca del cierre de </body>) -->
 <script>
   const form = document.getElementById('contactForm');
   const success = document.getElementById('successMessage');
 
   form.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Evita recargar
+    e.preventDefault(); // evita recargar
     const data = new FormData(form);
 
     try {
@@ -485,10 +518,9 @@
 
       if (response.ok) {
         form.reset();
-        form.classList.add('hidden'); // Oculta el formulario
-        success.classList.remove('hidden'); // Muestra el mensaje
-        // Animación de aparición
-        setTimeout(() => success.classList.add('opacity-100'), 100);
+        form.classList.add('hidden');           // oculta el formulario
+        success.classList.remove('hidden');      // muestra el mensaje
+        setTimeout(() => success.classList.add('opacity-100'), 100); // fade-in
       } else {
         alert('Hubo un error al enviar el formulario. Intente nuevamente.');
       }
@@ -497,6 +529,7 @@
     }
   });
 </script>
+
 
 
   <script>
