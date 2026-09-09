@@ -11,8 +11,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Campana Fumigaciones</title>
-  <link rel="icon" href="./assets/img/logo.webp" type="image/webp">
-  <!-- TODO: reemplazar por un favicon dedicado (ideal: .png 512x512 o .ico) cuando esté el logo mejorado -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -69,71 +67,6 @@
         height: 26px;
       }
     }
-
-    /* Banner de descuento (marquesina) */
-    .promo-marquee{
-      overflow: hidden;
-      white-space: nowrap;
-    }
-    .promo-marquee__track{
-      display: inline-block;
-      padding-left: 100%;
-      animation: promo-scroll 22s linear infinite;
-    }
-    .promo-marquee:hover .promo-marquee__track{
-      animation-play-state: paused;
-    }
-    @keyframes promo-scroll{
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-    @media (prefers-reduced-motion: reduce){
-      .promo-marquee__track{ animation: none; padding-left: 0; }
-    }
-
-    /* Sello "50 años" */
-    .badge-50{
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      width: 124px;
-      height: 124px;
-      border-radius: 50%;
-      background: #ffffff;
-      border: 4px solid #1A55CF;
-      box-shadow: inset 0 0 0 3px rgba(26,85,207,.15), 0 10px 24px rgba(0,0,0,.22);
-      color: #0E1730;
-      line-height: 1.15;
-      padding: 8px;
-    }
-    .badge-50 strong{
-      display: block;
-      font-size: 1.9rem;
-      font-weight: 800;
-      color: #1A55CF;
-      line-height: 1;
-    }
-    .badge-50 em{
-      display: block;
-      font-style: normal;
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      margin-top: 2px;
-    }
-    .badge-50 span{
-      display: block;
-      font-size: 0.5rem;
-      font-weight: 600;
-      letter-spacing: .02em;
-      text-transform: uppercase;
-      padding: 0 4px;
-      margin-top: 1px;
-    }
   </style>
 </head>
 
@@ -152,19 +85,6 @@
     </svg>
   </a>
 
-  <!-- BANNER DE DESCUENTO -->
-  <div class="bg-[#0E2F6B] text-white text-sm font-semibold py-2 promo-marquee">
-    <div class="promo-marquee__track">
-      <span class="mx-8">🎁 Contratando tu abono mensual obtené 10% de descuento</span>
-      <span class="mx-8">✓ Visita técnica sin cargo en C.A.B.A. y Gran Buenos Aires</span>
-      <span class="mx-8">📋 Solicitá tu cotización este mes y obtené un descuento en tu primer servicio</span>
-      <!-- Repetido para que el loop de la marquesina no muestre un corte -->
-      <span class="mx-8">🎁 Contratando tu abono mensual obtené 10% de descuento</span>
-      <span class="mx-8">✓ Visita técnica sin cargo en C.A.B.A. y Gran Buenos Aires</span>
-      <span class="mx-8">📋 Solicitá tu cotización este mes y obtené un descuento en tu primer servicio</span>
-    </div>
-  </div>
-
   <!-- HEADER -->
   <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -176,9 +96,7 @@
 
         <!-- Nav desktop -->
         <nav class="hidden md:flex items-center gap-8 text-[15px] font-semibold tracking-wide">
-          <a href="#plagas" class="hover:text-brand.blue">CONTROL DE PLAGAS</a>
-          <a href="#tanques" class="hover:text-brand.blue">TANQUES DE AGUA</a>
-          <a href="#certificaciones" class="hover:text-brand.blue">CERTIFICACIONES</a>
+          <a href="#servicios" class="hover:text-brand.blue">SERVICIOS</a>
           <a href="#contacto" class="hover:text-brand.blue">CONTACTO</a>
         </nav>
 
@@ -191,9 +109,8 @@
       <!-- Mobile menu -->
       <div id="mobile-menu" class="md:hidden hidden pb-4">
         <nav class="flex flex-col gap-2 text-sm font-semibold">
-          <a href="#plagas" class="px-3 py-2 rounded-lg hover:bg-slate-50">CONTROL DE PLAGAS</a>
-          <a href="#tanques" class="px-3 py-2 rounded-lg hover:bg-slate-50">TANQUES DE AGUA</a>
-          <a href="#certificaciones" class="px-3 py-2 rounded-lg hover:bg-slate-50">CERTIFICACIONES</a>
+          <a href="#servicios" class="px-3 py-2 rounded-lg hover:bg-slate-50">SERVICIOS</a>
+          <a href="#faq" class="px-3 py-2 rounded-lg hover:bg-slate-50">PREGUNTAS FRECUENTES</a>
           <a href="#contacto" class="px-3 py-2 rounded-lg hover:bg-slate-50">CONTACTO</a>
           <a href="https://wa.me/5491135972561" target="_blank" rel="noopener"
               class="mt-2 inline-flex items-center justify-center gap-2 bg-brand.blue text-white px-4 py-2 rounded-full">
@@ -208,7 +125,7 @@
 <!-- HERO con degradé celeste-azul -->
 <section class="relative">
   <!-- fondo con overlay -->
-  <div class="h-[560px] w-full bg-cover bg-center relative" 
+  <div class="h-[560px] w-full bg-cover bg-center relative"
         style="background-image:url('./assets/img/hero.webp');">
     <!-- overlay azul degradado -->
     <div class="absolute inset-0 bg-gradient-to-r from-[#1A55CF]/95 via-[#1A55CF]/80 to-transparent"></div>
@@ -239,21 +156,14 @@
             Enviar WhatsApp
         </a>
 
-        <!-- Botón Pedir presupuesto (ancla al formulario de contacto) -->
-          <a href="#contacto"
+        <!-- Botón Llamar ahora -->
+          <a href="tel:+541149115981"
           class="px-8 py-3 rounded-full border-2 border-white bg-[#1A55CF] text-white font-semibold shadow-md hover:brightness-110 transition">
-          Pedir presupuesto
+          Llamar ahora
           </a>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Sello 50 años -->
-    <div class="hidden sm:flex absolute right-8 lg:right-16 bottom-8 badge-50">
-      <strong>50</strong>
-      <em>Años</em>
-      <span>Garantizando<br>salud ambiental</span>
     </div>
   </div>
 </section>
@@ -290,7 +200,7 @@
         <h3 class="mt-4 text-center text-xl font-extrabold tracking-wide uppercase text-[#0E1730]">
           Rapidez
         </h3>
-        <p class="mt-3 text-justify leading-7 text-slate-700">
+        <p class="mt-3 text-center leading-7 text-slate-700">
           Coordinamos visitas, servicios y controles según la disponibilidad de tu empresa, ofreciendo una atención rápida y efectiva, porque tu tiempo es prioridad.
         </p>
       </article>
@@ -308,7 +218,7 @@
         <h3 class="mt-4 text-center text-xl font-extrabold tracking-wide uppercase text-[#0E1730]">
           Seguridad
         </h3>
-        <p class="mt-3 text-justify leading-7 text-slate-700">
+        <p class="mt-3 text-center leading-7 text-slate-700">
           Capacitamos continuamente a nuestros técnicos para un soporte de excelencia. El equipo es supervisado por nuestros Directores Técnicos para asegurar máxima calidad.
         </p>
       </article>
@@ -328,7 +238,7 @@
         <h3 class="mt-4 text-center text-xl font-extrabold tracking-wide uppercase text-[#0E1730]">
           Calidad
         </h3>
-        <p class="mt-3 text-justify leading-7 text-slate-700">
+        <p class="mt-3 text-center leading-7 text-slate-700">
           Utilizamos productos de última generación de proveedores reconocidos en el mercado, garantizando la máxima efectividad y resultados en nuestras soluciones.
         </p>
       </article>
@@ -337,34 +247,6 @@
 </section>
 
 <!--------------------------------------------------------------------------------------------------------------->
-
-<!-- HABILITACIONES -->
-<section id="certificaciones" class="bg-[#f6f9fc] py-14 scroll-mt-24">
-  <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0E1730] mb-3">
-      HABILITACIONES
-    </h2>
-    <p class="text-slate-600 mb-8 text-justify sm:text-center">
-      Trabajamos bajo las habilitaciones y registros oficiales exigidos para brindar
-      servicios de control de plagas, desinfección y limpieza de tanques de agua.
-    </p>
-    <!-- TODO: reemplazar por los números/nombres reales de habilitación que provea la empresa -->
-    <div class="grid gap-6 sm:grid-cols-3">
-      <div class="rounded-2xl border-2 border-[#1A55CF] bg-white px-6 py-8">
-        <p class="font-bold text-[#1A55CF]">Habilitación Municipal</p>
-        <p class="text-sm text-slate-600 mt-1">N° a completar</p>
-      </div>
-      <div class="rounded-2xl border-2 border-[#1A55CF] bg-white px-6 py-8">
-        <p class="font-bold text-[#1A55CF]">Registro Provincial</p>
-        <p class="text-sm text-slate-600 mt-1">N° a completar</p>
-      </div>
-      <div class="rounded-2xl border-2 border-[#1A55CF] bg-white px-6 py-8">
-        <p class="font-bold text-[#1A55CF]">Director Técnico</p>
-        <p class="text-sm text-slate-600 mt-1">Matrícula a completar</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- CTA: Nuestra efectividad como garantía -->
 <section class="bg-[#2E73E3] py-12 sm:py-14">
@@ -396,14 +278,14 @@
 <!------------------------------------------SERVICIOS---------------------------------------------->
 
 <!-- SERVICIOS -->
-<section id="servicios" class="bg-[#f6f9fc] scroll-mt-24">
+<section id="servicios" class="bg-[#f6f9fc]">
   <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 py-16">
     <h2 class="text-center text-3xl font-extrabold text-[#0E1730] mb-10">
       SERVICIOS
     </h2>
 
     <!-- BLOQUE 1 -->
-    <div id="plagas" class="bg-[#edf3fb] rounded-2xl py-10 px-6 mb-8 scroll-mt-24">
+    <div class="bg-[#edf3fb] rounded-2xl py-10 px-6 mb-8">
       <div class="text-center">
         <div class="flex justify-center mb-2">
           <!-- icono insecto -->
@@ -418,7 +300,7 @@
         <div class="grid md:grid-cols-2 gap-6 text-slate-700 max-w-4xl mx-auto">
           <div>
             <h4 class="font-semibold mb-1">DESINSECTACIÓN</h4>
-            <p class="text-justify">
+            <p>
               Controla insectos en un entorno específico para evitar daños y molestias.
               Esta técnica es crucial y su objetivo es mantener la higiene en el lugar
               de trabajo para preservar la salud de tus empleados.
@@ -426,22 +308,18 @@
           </div>
           <div>
             <h4 class="font-semibold mb-1">DESRATIZACIÓN</h4>
-            <p class="text-justify">
+            <p>
               Es el proceso para controlar poblaciones de ratas en un entorno determinado.
               Es esencial para prevenir enfermedades como Leptospirosis y Hantavirus.
               También realizamos este servicio previo a una demolición.
             </p>
           </div>
         </div>
-
-        <span class="mt-6 inline-block bg-green-100 text-green-700 text-sm font-semibold px-4 py-2 rounded-full">
-          ✓ Incluye Certificado Oficial y Registro Digital en App
-        </span>
       </div>
     </div>
 
     <!-- BLOQUE 2 -->
-    <div id="patogenos" class="bg-[#f2f6fd] rounded-2xl py-10 px-6 mb-8 scroll-mt-24">
+    <div class="bg-[#f2f6fd] rounded-2xl py-10 px-6 mb-8">
       <div class="text-center">
         <div class="flex justify-center mb-2">
           <!-- icono escudo sanitario -->
@@ -457,21 +335,17 @@
 
         <div class="max-w-3xl mx-auto text-slate-700">
           <h4 class="font-semibold mb-1">DESINFECCIÓN</h4>
-          <p class="text-justify">
+          <p>
             Implica eliminar microorganismos patógenos presentes en superficies y ambientes infestados.
             Este procedimiento es muy importante para prevenir la propagación de enfermedades.
             Se utilizan desinfectantes específicos que aseguran la erradicación de bacterias, virus y hongos.
           </p>
         </div>
-
-        <span class="mt-6 inline-block bg-green-100 text-green-700 text-sm font-semibold px-4 py-2 rounded-full">
-          ✓ Incluye Certificado Oficial y Registro Digital en App
-        </span>
       </div>
     </div>
 
     <!-- BLOQUE 3 -->
-    <div id="tanques" class="bg-[#edf3fb] rounded-2xl py-10 px-6 mb-8 scroll-mt-24">
+    <div class="bg-[#edf3fb] rounded-2xl py-10 px-6 mb-8">
       <div class="text-center">
 <div class="flex justify-center mb-2">
   <!-- icono gota de agua -->
@@ -486,34 +360,12 @@
 
         <div class="max-w-3xl mx-auto text-slate-700">
           <h4 class="font-semibold mb-1">LIMPIEZA Y REPARACIÓN DE TANQUES DE AGUA</h4>
-          <p class="text-justify">
-            Realizamos el lavado, desinfección e impermeabilización de tanques de agua,
-            eliminando sedimentos y microorganismos que afectan la calidad del agua que
-            consume tu empresa o consorcio. Todo el proceso se documenta con muestreo
-            de laboratorio para respaldar el cumplimiento normativo vigente.
+          <p>
+            Implica eliminar microorganismos patógenos presentes en superficies y ambientes infestados.
+            Este procedimiento es muy importante para prevenir la propagación de enfermedades.
+            Se utilizan desinfectantes específicos que aseguran la erradicación de bacterias, virus y hongos.
           </p>
         </div>
-
-        <span class="mt-6 inline-block bg-green-100 text-green-700 text-sm font-semibold px-4 py-2 rounded-full">
-          ✓ Incluye Certificado Oficial &nbsp;|&nbsp; ✓ Análisis bacteriológico &nbsp;|&nbsp; ✓ Análisis fisicoquímico
-        </span>
-      </div>
-    </div>
-
-    <!-- ¿POR QUÉ ES IMPORTANTE? -->
-    <div class="rounded-2xl border-2 border-[#1A55CF] bg-white py-8 px-6 mb-8">
-      <h3 class="text-center text-[#0E1730] font-extrabold text-lg mb-4 uppercase">¿Por qué es importante?</h3>
-      <div class="grid md:grid-cols-2 gap-6 text-slate-700 max-w-4xl mx-auto">
-        <p class="text-justify">
-          <span class="font-semibold">Limpieza y Desinfección de Tanques de Agua:</span>
-          obligatoriedad semestral (C.A.B.A. y Prov. de Bs. As.) con Análisis Bacteriológico
-          y Fisicoquímico en laboratorio.
-        </p>
-        <p class="text-justify">
-          <span class="font-semibold">Control de Plagas (Fumigación):</span>
-          abonos periódicos obligatorios para Consorcios, Industrias Alimenticias y
-          Comerciales según Ley de Higiene y Seguridad N° 19.587.
-        </p>
       </div>
     </div>
 
@@ -534,7 +386,7 @@
         <div class="grid md:grid-cols-3 gap-6 text-slate-700 max-w-5xl mx-auto">
           <div>
             <h4 class="font-semibold mb-1">PALOMAS</h4>
-            <p class="text-justify">
+            <p>
               El control de palomas trata de reducir la población en áreas urbanas.
               Este procedimiento implica diversas estrategias para desalentar su presencia
               y minimizar su impacto negativo.
@@ -542,32 +394,19 @@
           </div>
           <div>
             <h4 class="font-semibold mb-1">MOSQUITOS</h4>
-            <p class="text-justify">
+            <p>
               Se centra en reducir la población de estos insectos para prevenir enfermedades
               transmitidas como el <strong>dengue</strong> y la <strong>chikungunya</strong>.
             </p>
           </div>
           <div>
             <h4 class="font-semibold mb-1">MURCIÉLAGOS</h4>
-            <p class="text-justify">
+            <p>
               Se enfoca en gestionar su presencia en áreas urbanas para reducir riesgos de salud.
               El proceso incluye exclusión segura sellando puntos de entrada y aplicando
               medidas preventivas para evitar su retorno.
             </p>
           </div>
-        </div>
-
-        <!-- Bloque exclusivo de Mosquitos -->
-        <div class="mt-8 max-w-3xl mx-auto rounded-xl bg-white border border-[#1A55CF]/30 px-6 py-6 text-left">
-          <h4 class="font-bold text-[#1A55CF] uppercase mb-2">Por qué prevenir mosquitos es clave</h4>
-          <p class="text-justify text-slate-700">
-            El control preventivo de mosquitos reduce drásticamente el riesgo de brotes de
-            dengue, zika y chikungunya en tu empresa, consorcio o barrio. Actuamos sobre los
-            focos de cría (agua estancada, contenedores, desagües) y aplicamos tratamientos
-            larvicidas y adulticidas certificados, con un plan de visitas periódicas durante
-            la temporada de mayor riesgo (primavera-verano) para cortar el ciclo reproductivo
-            antes de que se conviertan en un problema de salud pública.
-          </p>
         </div>
       </div>
     </div>
@@ -594,33 +433,20 @@
         </h2>
         <p class="mt-2 text-xl text-slate-600">para darte el mejor servicio</p>
 
-        <div class="mt-8 space-y-4 text-slate-700">
-          <p class="text-justify">
-            <span class="font-semibold">Inmediatez:</span>
-            el certificado llega a su mail o teléfono apenas el técnico termina en el lugar.
+        <div class="mt-8 space-y-5 text-slate-700">
+          <p>
+            <span class="font-semibold">Ofrecemos atención personalizada</span>
+            a través de teléfono, correo electrónico y WhatsApp para que puedas
+            ponerte en contacto con nosotros y brindar el apoyo que necesita tu empresa.
           </p>
-          <p class="text-justify">
-            <span class="font-semibold">Histórico:</span>
-            registro permanente de insumos aplicados y fechas para presentar ante auditorías.
+          <p>
+            <span class="font-semibold">Nuestros técnicos reciben capacitación certificada continua</span>
+            para hacer frente a cualquier situación de manera efectiva.
           </p>
-          <p class="text-justify">
-            <span class="font-semibold">Emisión de certificados en tiempo real:</span>
-            finalizado el servicio en campo, el certificado oficial y la documentación
-            quedan generados y listos sin demoras burocráticas.
-          </p>
-          <p class="text-justify">
-            <span class="font-semibold">Trazabilidad y registro digital:</span>
-            histórico de visitas, productos utilizados, dosificaciones y observaciones
-            técnicas almacenadas de forma segura y accesible.
-          </p>
-          <p class="text-justify">
-            <span class="font-semibold">Informes técnicos para auditorías:</span>
-            muestreo claro para presentar ante inspecciones municipales, de salud pública
-            o auditorías de calidad/SST.
-          </p>
-          <p class="text-justify">
-            <span class="font-semibold">Transparencia operativa:</span>
-            confirmación de fecha, hora y técnico asignado en cada intervención.
+          <p>
+            <span class="font-semibold">Contamos con una APP de uso interno exclusiva para nuestro personal,</span>
+            que permite enviar de manera rápida la constancia del servicio realizado
+            para la tranquilidad de tu empresa.
           </p>
         </div>
 
@@ -640,47 +466,14 @@
       </div>
 
       <!-- Columna vacía para espacio de imagen -->
-      <!-- TODO: el fondo (hero2.webp) muestra los celulares con pantalla en blanco.
-           Pedir a la empresa capturas reales de la App (Reporte Digital, Certificado
-           con código de verificación, Registro de visitas) para reemplazar ese fondo
-           o superponer las capturas sobre las pantallas de los celulares. -->
       <div class="hidden md:block"></div>
-    </div>
-  </div>
-</section>
-
-<!-- CÓMO FUNCIONA EL SERVICIO -->
-<!-- TODO: reemplazar por la infografía real de "cómo empieza y termina el servicio"
-     provista por la empresa (diseño gráfico, no es texto). Placeholder de 3 pasos
-     mientras tanto. -->
-<section class="bg-white py-14">
-  <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0E1730] mb-10">
-      ¿CÓMO ES EL SERVICIO?
-    </h2>
-    <div class="grid gap-8 sm:grid-cols-3">
-      <div>
-        <div class="mx-auto h-12 w-12 rounded-full bg-[#1A55CF] text-white flex items-center justify-center font-bold">1</div>
-        <p class="mt-3 font-semibold text-[#0E1730]">Coordinás la visita</p>
-        <p class="text-sm text-slate-600 mt-1">Por WhatsApp, teléfono o el formulario de la web.</p>
-      </div>
-      <div>
-        <div class="mx-auto h-12 w-12 rounded-full bg-[#1A55CF] text-white flex items-center justify-center font-bold">2</div>
-        <p class="mt-3 font-semibold text-[#0E1730]">El técnico realiza el servicio</p>
-        <p class="text-sm text-slate-600 mt-1">Registra en la App insumos, dosificación y observaciones.</p>
-      </div>
-      <div>
-        <div class="mx-auto h-12 w-12 rounded-full bg-[#1A55CF] text-white flex items-center justify-center font-bold">3</div>
-        <p class="mt-3 font-semibold text-[#0E1730]">Recibís tu certificado</p>
-        <p class="text-sm text-slate-600 mt-1">Llega al instante por mail, listo para presentar ante auditorías.</p>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- FORMULARIO DE CONTACTO -->
 <!-- CONTACTO (sección completa) -->
-<section id="contacto" class="bg-[#2E73E3] py-16 scroll-mt-24">
+<section id="contacto" class="bg-[#2E73E3] py-16">
   <div class="max-w-7xl mx-auto px-6 lg:px-12">
     <h2 class="text-center text-white text-3xl font-extrabold tracking-wide">
       CONTACTO
@@ -690,10 +483,6 @@
       <!-- Columna: Formulario -->
       <div class="max-w-[560px]">
         <h3 class="text-white font-bold uppercase tracking-wide mb-3">Pedí tu presupuesto</h3>
-        <p class="text-white/90 text-sm font-semibold mb-4">
-          🎁 Recordá: contratando tu abono mensual obtenés 10% de descuento, y la
-          visita técnica en C.A.B.A. y Gran Buenos Aires no tiene cargo.
-        </p>
 
         <!-- FORMULARIO DE CONTACTO -->
         <form id="contactForm"
@@ -804,13 +593,9 @@
       <!-- NOSOTROS -->
       <div>
         <h3 class="text-[#0E1730] text-lg font-extrabold tracking-wide">NOSOTROS</h3>
-        <p class="mt-1 text-sm leading-relaxed text-slate-700 text-justify">
+        <p class="mt-1 text-sm leading-relaxed text-slate-700">
           <span class="font-semibold">48 años de experiencia</span><br>
           garantizando tu bienestar con soluciones en sanidad ambiental.
-        </p>
-        <!-- TODO: reemplazar por los sellos/números de habilitación oficial reales -->
-        <p class="mt-2 text-xs text-slate-500">
-          Habilitación Municipal N° a completar &nbsp;·&nbsp; Registro Provincial N° a completar
         </p>
       </div>
 
