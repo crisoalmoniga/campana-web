@@ -69,15 +69,79 @@
       }
     }
 
-    /* Foto de tarjeta de servicio */
+    /* Botones: onda expansiva que invierte los colores al pasar el mouse.
+       El ::before es un círculo de 0px centrado en el botón; al hacer hover
+       crece y "inunda" el botón con el color invertido, recortado por el
+       propio borde redondeado (overflow:hidden). El texto va en un <span>
+       con z-index propio para quedar siempre arriba de la onda. */
+    .btn-wave{
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .btn-wave > span{
+      position: relative;
+      z-index: 1;
+      transition: color .4s ease;
+    }
+    .btn-wave::before{
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width .5s ease, height .5s ease;
+      z-index: 0;
+    }
+    .btn-wave:hover::before{
+      width: 450px;
+      height: 450px;
+    }
+    .btn-wave-blue::before{ background: #fff; }
+    .btn-wave-blue:hover > span{ color: #1A55CF; }
+
+    .btn-wave-green::before{ background: #fff; }
+    .btn-wave-green:hover > span{ color: #1B8F4C; }
+
+    .btn-wave-red::before{ background: #fff; }
+    .btn-wave-red:hover > span{ color: #DC2626; }
+
+    .btn-wave-white::before{ background: #1A55CF; }
+    .btn-wave-white:hover > span{ color: #fff; }
+
+    .btn-wave-outline::before{ background: #fff; }
+    .btn-wave-outline:hover > span{ color: #1A55CF; }
+    .btn-wave-outline:hover{ border-color: #fff; }
+
+    @media (prefers-reduced-motion: reduce){
+      /* Sin animación, pero el cambio de color se mantiene: aparece
+         directo (sin la onda) en vez de animado. */
+      .btn-wave::before{ transition: none; }
+      .btn-wave > span{ transition: none; }
+    }
+
+    /* Foto de tarjeta de servicio: el marco recorta el zoom, así la imagen
+       nunca se derrama sobre el texto vecino (el ::before es lo único que
+       escala, el marco .service-photo se queda quieto y con overflow:hidden) */
     .service-photo{
+      position: relative;
       height: 160px;
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+    }
+    .service-photo::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: inherit;
       background-size: cover;
       background-position: center;
-      border-radius: 12px 12px 0 0;
       transition: transform .5s ease;
     }
-    .photo-zoom:hover .service-photo{
+    .photo-zoom:hover .service-photo::before{
       transform: scale(1.14);
     }
 
@@ -222,8 +286,8 @@
         </nav>
 
         <a href="#contacto"
-           class="hidden md:inline-flex items-center justify-center rounded-full bg-[#1A55CF] text-white text-sm font-semibold px-5 py-2.5 hover:brightness-110 hover:-translate-y-1 transition shrink-0">
-          SOLICITAR PRESUPUESTO
+           class="btn-wave btn-wave-blue hidden md:inline-flex items-center justify-center rounded-full bg-[#1A55CF] text-white text-sm font-semibold px-5 py-2.5 hover:-translate-y-1 transition shrink-0">
+          <span>SOLICITAR PRESUPUESTO</span>
         </a>
 
         <!-- Mobile menu button -->
@@ -241,8 +305,8 @@
           <a href="#zonas" class="px-3 py-2 rounded-lg hover:bg-slate-50">ZONAS</a>
           <a href="#contacto" class="px-3 py-2 rounded-lg hover:bg-slate-50">CONTACTO</a>
           <a href="#contacto"
-              class="mt-2 inline-flex items-center justify-center gap-2 bg-[#1A55CF] text-white px-4 py-2 rounded-full">
-              Solicitar presupuesto
+              class="btn-wave btn-wave-blue mt-2 inline-flex items-center justify-center gap-2 bg-[#1A55CF] text-white px-4 py-2 rounded-full">
+              <span>Solicitar presupuesto</span>
           </a>
         </nav>
       </div>
@@ -280,14 +344,14 @@
             <div class="mt-7 flex flex-wrap gap-4">
               <!-- Botón WhatsApp (verde) -->
               <a href="https://wa.me/5491135972561" target="_blank" rel="noopener"
-                class="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-[#25D366] text-white font-semibold shadow-md hover:brightness-110 hover:-translate-y-1 transition">
-                Enviar WhatsApp
+                class="btn-wave btn-wave-green inline-flex items-center gap-2 px-8 py-3 rounded-full bg-[#25D366] text-white font-semibold shadow-md hover:-translate-y-1 transition">
+                <span>Enviar WhatsApp</span>
               </a>
 
               <!-- Botón Llamar ahora -->
               <a href="tel:+541149115981"
-                class="px-8 py-3 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 hover:-translate-y-1 transition">
-                Llamar Ahora
+                class="btn-wave btn-wave-outline px-8 py-3 rounded-full border-2 border-white text-white font-semibold hover:-translate-y-1 transition">
+                <span>Llamar Ahora</span>
               </a>
             </div>
           </div>
@@ -416,17 +480,17 @@
 
       <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8">
         <a href="https://wa.me/5491135972561" target="_blank" rel="noopener"
-            class="inline-flex items-center justify-center rounded-full bg-[#25D366] text-white font-semibold
+            class="btn-wave btn-wave-green inline-flex items-center justify-center rounded-full bg-[#25D366] text-white font-semibold
                   px-8 sm:px-10 py-3.5 sm:py-4 shadow-[0_10px_24px_rgba(0,0,0,.12)] min-w-[260px] sm:min-w-[360px]
-                  hover:brightness-110 hover:-translate-y-1 transition">
-          Enviar WhatsApp
+                  hover:-translate-y-1 transition">
+          <span>Enviar WhatsApp</span>
         </a>
 
         <a href="#contacto"
-            class="inline-flex items-center justify-center rounded-full bg-white text-[#2E73E3] font-semibold
+            class="btn-wave btn-wave-white inline-flex items-center justify-center rounded-full bg-white text-[#2E73E3] font-semibold
                   px-8 sm:px-10 py-3.5 sm:py-4 shadow-[0_10px_24px_rgba(0,0,0,.12)] min-w-[260px] sm:min-w-[360px]
-                  hover:opacity-95 hover:-translate-y-1 transition">
-          Hacé tu consulta
+                  hover:-translate-y-1 transition">
+          <span>Hacé tu consulta</span>
         </a>
       </div>
     </div>
@@ -526,8 +590,8 @@
       <div class="mt-10 text-center">
         <p class="inline-flex items-center gap-3 flex-wrap justify-center text-[#0E1730] font-semibold">
           ¿Listo para obtener tu certificado oficial?
-          <a href="#contacto" class="inline-flex items-center justify-center bg-[#1A55CF] text-white text-sm font-bold uppercase px-5 py-2.5 rounded-full hover:brightness-110 hover:-translate-y-1 transition">
-            Solicitar Presupuesto
+          <a href="#contacto" class="btn-wave btn-wave-blue inline-flex items-center justify-center bg-[#1A55CF] text-white text-sm font-bold uppercase px-5 py-2.5 rounded-full hover:-translate-y-1 transition">
+            <span>Solicitar Presupuesto</span>
           </a>
         </p>
       </div>
@@ -561,14 +625,14 @@
 
           <div class="mt-8 flex flex-wrap gap-4">
             <a href="https://wa.me/5491135972561" target="_blank" rel="noopener"
-                class="inline-flex items-center justify-center rounded-full bg-[#25D366] text-white font-semibold
-                      px-7 py-3 hover:brightness-110 hover:-translate-y-1 transition">
-              Enviar WhatsApp
+                class="btn-wave btn-wave-green inline-flex items-center justify-center rounded-full bg-[#25D366] text-white font-semibold
+                      px-7 py-3 hover:-translate-y-1 transition">
+              <span>Enviar WhatsApp</span>
             </a>
             <a href="#contacto"
-                class="inline-flex items-center justify-center rounded-full bg-[#1A55CF] text-white font-semibold
-                      px-7 py-3 hover:brightness-110 hover:-translate-y-1 transition">
-              Hacé tu consulta
+                class="btn-wave btn-wave-blue inline-flex items-center justify-center rounded-full bg-[#1A55CF] text-white font-semibold
+                      px-7 py-3 hover:-translate-y-1 transition">
+              <span>Hacé tu consulta</span>
             </a>
           </div>
         </div>
@@ -638,9 +702,9 @@
           </label>
 
           <button type="submit"
-                  class="mt-2 inline-flex items-center justify-center bg-white text-[#2E73E3]
-                          font-bold tracking-wide px-6 py-3 rounded-sm shadow-sm hover:opacity-95 hover:-translate-y-1 transition">
-            ENVIAR
+                  class="btn-wave btn-wave-white mt-2 inline-flex items-center justify-center bg-white text-[#2E73E3]
+                          font-bold tracking-wide px-6 py-3 rounded-sm shadow-sm hover:-translate-y-1 transition">
+            <span>ENVIAR</span>
           </button>
         </form>
 
@@ -679,9 +743,11 @@
         </div>
 
         <a href="tel:+541149115981"
-           class="mt-8 inline-flex items-center justify-center gap-2 text-center bg-[#1A55CF] text-white text-sm font-semibold px-6 py-4 rounded-full hover:brightness-110 hover:-translate-y-1 transition">
-          <svg class="h-4 w-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V21c0 .55-.45 1-1 1C10.85 22 2 13.15 2 2c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/></svg>
-          Visita Técnica Sin Cargo en C.A.B.A.<br class="hidden sm:block"> y Gran Buenos Aires
+           class="btn-wave btn-wave-blue mt-8 inline-flex items-center justify-center text-center bg-[#1A55CF] text-white text-sm font-semibold px-6 py-4 rounded-full hover:-translate-y-1 transition">
+          <span class="inline-flex items-center gap-2">
+            <svg class="h-4 w-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V21c0 .55-.45 1-1 1C10.85 22 2 13.15 2 2c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/></svg>
+            Visita Técnica Sin Cargo en C.A.B.A.<br class="hidden sm:block"> y Gran Buenos Aires
+          </span>
         </a>
 
         <!-- Datos de contacto -->
@@ -731,12 +797,12 @@
 
         <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
           <a href="https://www.google.com/maps?cid=9347828828582400088" target="_blank" rel="noopener"
-             class="inline-flex items-center justify-center bg-red-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:brightness-110 hover:-translate-y-1 transition">
-            Dejanos tu opinión
+             class="btn-wave btn-wave-red inline-flex items-center justify-center bg-red-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:-translate-y-1 transition">
+            <span>Dejanos tu opinión</span>
           </a>
           <a href="https://www.google.com/maps?cid=9347828828582400088" target="_blank" rel="noopener"
-             class="inline-flex items-center justify-center bg-[#1A55CF] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:brightness-110 hover:-translate-y-1 transition">
-            Ver todas las reseñas
+             class="btn-wave btn-wave-blue inline-flex items-center justify-center bg-[#1A55CF] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:-translate-y-1 transition">
+            <span>Ver todas las reseñas</span>
           </a>
         </div>
       </div>
