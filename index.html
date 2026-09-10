@@ -602,10 +602,10 @@
   </section>
 
   <!-- RESEÑAS -->
-  <!-- TODO: sección de reseñas conectada a Google Business. Para traer reseñas reales de
-       forma dinámica hace falta un widget de terceros (ej. Elfsight, Trustindex, EmbedSocial)
-       apuntando al Place ID de Google Business de la empresa; no es algo que se resuelva solo
-       con HTML/CSS estático. Mientras tanto se deja el bloque visual con contenido de ejemplo. -->
+  <!-- Conectado a la ficha real de Google Business (Campana Fumigaciones S.R.L., 4.7★, 25 opiniones).
+       Los botones linkean directo a Maps vía CID (opción nativa de Google, sin costo de widget).
+       Si más adelante quieren que el carrusel se actualice solo con reseñas nuevas, ahí sí hace
+       falta un widget de terceros pago (Elfsight/Trustindex/EmbedSocial). -->
   <section class="bg-[#f6f9fc] py-16">
     <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
       <h2 class="text-2xl font-extrabold text-[#0E1730]">+ 50 años dando soluciones</h2>
@@ -616,13 +616,15 @@
         <div class="flex justify-center gap-1 mt-2 text-2xl text-yellow-400" aria-hidden="true">
           <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
         </div>
-        <p class="mt-2 text-sm text-slate-600">Más de 20 valoraciones de empresas, consorcios e industrias.</p>
+        <p class="mt-2 text-sm text-slate-600">Basado en 25 opiniones verificadas en Google.</p>
 
         <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
-          <a href="#" class="inline-flex items-center justify-center bg-red-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:brightness-110 transition">
+          <a href="https://www.google.com/maps?cid=9347828828582400088" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center bg-red-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:brightness-110 transition">
             Dejanos tu opinión
           </a>
-          <a href="#" class="inline-flex items-center justify-center bg-[#1A55CF] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:brightness-110 transition">
+          <a href="https://www.google.com/maps?cid=9347828828582400088" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center bg-[#1A55CF] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:brightness-110 transition">
             Ver todas las reseñas
           </a>
         </div>
@@ -630,16 +632,25 @@
 
       <div class="mt-10 grid sm:grid-cols-3 gap-5">
         <div class="bg-white rounded-xl p-5 flex gap-3 shadow-[0_10px_24px_rgba(0,0,0,.05)]">
-          <div class="h-10 w-10 rounded-full bg-slate-300 shrink-0"></div>
-          <p class="text-sm text-slate-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+          <div class="h-10 w-10 rounded-full bg-slate-300 shrink-0 flex items-center justify-center text-slate-500 font-bold text-sm">FB</div>
+          <div>
+            <p class="text-sm text-slate-700">"Muy profesionales y capacitados. Recomiendo mucho!"</p>
+            <p class="mt-1 text-xs text-slate-400">Franca Boccazzi · Google</p>
+          </div>
         </div>
         <div class="bg-white rounded-xl p-5 flex gap-3 shadow-[0_10px_24px_rgba(0,0,0,.05)]">
-          <div class="h-10 w-10 rounded-full bg-slate-300 shrink-0"></div>
-          <p class="text-sm text-slate-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+          <div class="h-10 w-10 rounded-full bg-slate-300 shrink-0 flex items-center justify-center text-slate-500 font-bold text-sm">NG</div>
+          <div>
+            <p class="text-sm text-slate-700">"Excelente atención. El servicio de limpieza de tanque es súper recomendable."</p>
+            <p class="mt-1 text-xs text-slate-400">Nicole Florencia González · Google</p>
+          </div>
         </div>
         <div class="bg-white rounded-xl p-5 flex gap-3 shadow-[0_10px_24px_rgba(0,0,0,.05)]">
-          <div class="h-10 w-10 rounded-full bg-slate-300 shrink-0"></div>
-          <p class="text-sm text-slate-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+          <div class="h-10 w-10 rounded-full bg-slate-300 shrink-0 flex items-center justify-center text-slate-500 font-bold text-sm">OB</div>
+          <div>
+            <p class="text-sm text-slate-700">"Excelente solución para el control de plagas."</p>
+            <p class="mt-1 text-xs text-slate-400">Oscar Bas · Google</p>
+          </div>
         </div>
       </div>
     </div>
