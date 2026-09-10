@@ -67,6 +67,14 @@
         height: 26px;
       }
     }
+
+    /* Foto de tarjeta de servicio */
+    .service-photo{
+      height: 160px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px 12px 0 0;
+    }
   </style>
 </head>
 
@@ -85,20 +93,34 @@
     </svg>
   </a>
 
+  <!-- BARRA SUPERIOR -->
+  <div class="bg-[#1A55CF] text-white text-center text-sm font-semibold py-2 px-4">
+    ✓ Visita Técnica Sin Cargo en C.A.B.A. y Gran Buenos Aires
+  </div>
+
   <!-- HEADER -->
-  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="h-16 flex items-center justify-between">
+      <div class="h-16 flex items-center justify-between gap-4">
         <!-- Logo -->
-        <a href="#" class="flex items-center gap-3">
+        <!-- TODO: reemplazar por el logo nuevo en alta que Luciana dejó en Drive -->
+        <a href="#inicio" class="flex items-center gap-3 shrink-0">
           <img src="/assets/img/logo.webp" alt="Campana Fumigaciones" class="h-8 w-auto">
         </a>
 
         <!-- Nav desktop -->
-        <nav class="hidden md:flex items-center gap-8 text-[15px] font-semibold tracking-wide">
+        <nav class="hidden md:flex items-center gap-6 text-[14px] font-semibold tracking-wide">
+          <a href="#inicio" class="hover:text-brand.blue">INICIO</a>
           <a href="#servicios" class="hover:text-brand.blue">SERVICIOS</a>
+          <a href="#certificados" class="hover:text-brand.blue">CERTIFICADOS</a>
+          <a href="#zonas" class="hover:text-brand.blue">ZONAS</a>
           <a href="#contacto" class="hover:text-brand.blue">CONTACTO</a>
         </nav>
+
+        <a href="#contacto"
+           class="hidden md:inline-flex items-center justify-center rounded-full bg-[#1A55CF] text-white text-sm font-semibold px-5 py-2.5 hover:brightness-110 transition shrink-0">
+          SOLICITAR PRESUPUESTO
+        </a>
 
         <!-- Mobile menu button -->
         <button id="btn-menu" class="md:hidden inline-flex items-center justify-center p-2.5 rounded-lg border border-slate-200">
@@ -109,412 +131,399 @@
       <!-- Mobile menu -->
       <div id="mobile-menu" class="md:hidden hidden pb-4">
         <nav class="flex flex-col gap-2 text-sm font-semibold">
+          <a href="#inicio" class="px-3 py-2 rounded-lg hover:bg-slate-50">INICIO</a>
           <a href="#servicios" class="px-3 py-2 rounded-lg hover:bg-slate-50">SERVICIOS</a>
-          <a href="#faq" class="px-3 py-2 rounded-lg hover:bg-slate-50">PREGUNTAS FRECUENTES</a>
+          <a href="#certificados" class="px-3 py-2 rounded-lg hover:bg-slate-50">CERTIFICADOS</a>
+          <a href="#zonas" class="px-3 py-2 rounded-lg hover:bg-slate-50">ZONAS</a>
           <a href="#contacto" class="px-3 py-2 rounded-lg hover:bg-slate-50">CONTACTO</a>
-          <a href="https://wa.me/5491135972561" target="_blank" rel="noopener"
-              class="mt-2 inline-flex items-center justify-center gap-2 bg-brand.blue text-white px-4 py-2 rounded-full">
-              WhatsApp
+          <a href="#contacto"
+              class="mt-2 inline-flex items-center justify-center gap-2 bg-[#1A55CF] text-white px-4 py-2 rounded-full">
+              Solicitar presupuesto
           </a>
         </nav>
       </div>
     </div>
   </header>
 
-  <!-- HERO con fondo único + overlay azul a la izquierda -->
-<!-- HERO con degradé celeste-azul -->
-<section class="relative">
-  <!-- fondo con overlay -->
-  <div class="h-[560px] w-full bg-cover bg-center relative"
-        style="background-image:url('./assets/img/hero.webp');">
-    <!-- overlay azul degradado -->
-    <div class="absolute inset-0 bg-gradient-to-r from-[#1A55CF]/95 via-[#1A55CF]/80 to-transparent"></div>
+  <!-- HERO -->
+  <section id="inicio" class="relative scroll-mt-16">
+    <div class="h-[560px] w-full bg-cover bg-center relative"
+          style="background-image:url('./assets/img/hero.webp');">
+      <!-- overlay azul degradado -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#1A55CF]/95 via-[#1A55CF]/80 to-transparent"></div>
 
-    <!-- contenido -->
-    <div class="absolute inset-0 flex items-center">
-      <div class="max-w-7xl mx-auto w-full px-6 lg:px-20">
-        <div class="max-w-xl text-white">
-          <h1 class="text-[2.0rem] sm:text-4xl lg:text-[1.8rem] font-extrabold leading-snug">
-            CONTROL DE PLAGAS<br/>
-            LIMPIEZA DE TANQUES DE AGUA
-          </h1>
+      <!-- contenido -->
+      <div class="absolute inset-0 flex items-center">
+        <div class="max-w-7xl mx-auto w-full px-6 lg:px-20">
+          <div class="max-w-xl text-white">
+            <span class="inline-flex items-center gap-2 bg-white/15 border border-white/40 text-white text-xs font-bold tracking-wide uppercase px-3 py-1.5 rounded-full">
+              📍 Provincia de Bs. As. – C.A.B.A.
+            </span>
 
-          <p class="mt-2 text-white/80 font-semibold tracking-wide uppercase text-[15px]">
-            PROVINCIA DE BS. AS – C.A.B.A.
-          </p>
+            <h1 class="mt-4 text-[2.4rem] sm:text-5xl lg:text-[3.1rem] font-extrabold leading-[1.05]">
+              CONTROL DE PLAGAS<br/>
+              LIMPIEZA DE TANQUES DE AGUA
+            </h1>
 
-          <p class="mt-6 text-white/90 text-lg leading-relaxed">
-            Soluciones efectivas, resultados garantizados para tu empresa.
-          </p>
+            <p class="mt-5 text-white/90 text-lg leading-relaxed">
+              Soluciones efectivas de sanidad ambiental para consorcios, empresas e industrias.
+            </p>
 
-          <p class="mt-2 text-white font-semibold">Obtenga su Certificado Oficial</p>
+            <p class="mt-1 text-white font-semibold">
+              Gestión digital con Certificado Oficial e informe inmediato.
+            </p>
 
-        <div class="mt-7 flex flex-wrap gap-4">
-          <!-- Botón WhatsApp -->
-          <a href="https://wa.me/5491135972561" target="_blank" rel="noopener"
-            class="px-8 py-3 rounded-full border-2 border-white bg-[#1A55CF] text-white font-semibold shadow-md hover:brightness-110 transition">
-            Enviar WhatsApp
-        </a>
+            <div class="mt-7 flex flex-wrap gap-4">
+              <!-- Botón WhatsApp (verde) -->
+              <a href="https://wa.me/5491135972561" target="_blank" rel="noopener"
+                class="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-[#25D366] text-white font-semibold shadow-md hover:brightness-110 transition">
+                Enviar WhatsApp
+              </a>
 
-        <!-- Botón Llamar ahora -->
-          <a href="tel:+541149115981"
-          class="px-8 py-3 rounded-full border-2 border-white bg-[#1A55CF] text-white font-semibold shadow-md hover:brightness-110 transition">
-          Llamar ahora
-          </a>
+              <!-- Botón Llamar ahora -->
+              <a href="tel:+541149115981"
+                class="px-8 py-3 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition">
+                Llamar Ahora
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!------------------------------------------------------------------------------>
+  <!-- CONTADOR DE ESTADÍSTICAS -->
+  <section class="bg-white py-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 grid grid-cols-3 gap-2 sm:gap-4 text-center">
+      <div>
+        <p class="text-xl sm:text-3xl md:text-4xl font-extrabold text-[#1A55CF]">+50</p>
+        <p class="mt-1 text-[11px] sm:text-sm font-semibold text-slate-600">Años de experiencia</p>
+      </div>
+      <div>
+        <p class="text-xl sm:text-3xl md:text-4xl font-extrabold text-[#1A55CF]">+1.800.000</p>
+        <p class="mt-1 text-[11px] sm:text-sm font-semibold text-slate-600">Servicios realizados satisfactoriamente</p>
+      </div>
+      <div>
+        <p class="text-xl sm:text-3xl md:text-4xl font-extrabold text-[#1A55CF]">21</p>
+        <p class="mt-1 text-[11px] sm:text-sm font-semibold text-slate-600">Profesionales dedicados</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICADOS / HABILITACIONES -->
+  <section id="certificados" class="bg-[#f6f9fc] py-14 scroll-mt-16">
+    <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div class="bg-[#1A55CF] text-white text-center font-bold uppercase tracking-wide text-sm sm:text-base rounded-full py-3 px-6">
+        Contamos con habilitaciones nacionales, provinciales y municipales
+      </div>
+
+      <div class="mt-8 grid gap-8 sm:grid-cols-3 text-sm">
+        <div>
+          <p class="font-bold text-[#1A55CF]">✓ SALUD PÚBLICA</p>
+          <p class="mt-1 text-slate-700">Dir. Nacional de Habilitación, Fiscalización y Fronteras</p>
+          <p class="font-semibold text-slate-800">Ministerio de Salud de la Nación</p>
+        </div>
+        <div>
+          <p class="font-bold text-[#1A55CF]">✓ ASUNTOS AGRARIOS</p>
+          <p class="mt-1 text-slate-700">Dirección de Fiscalización</p>
+          <p class="font-semibold text-slate-800">Ministerio de Desarrollo Agrario<br>Provincia de Buenos Aires</p>
+        </div>
+        <div class="space-y-1 text-slate-700 font-medium">
+          <p>✓ Ciudad Autónoma de Bs. As (CABA)</p>
+          <p>✓ La Matanza</p>
+          <p>✓ San Martín</p>
+          <p>✓ 3 de Febrero</p>
+          <p>✓ Escobar</p>
+          <p>✓ Otras jurisdicciones</p>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <span class="inline-block bg-white border border-[#1A55CF]/30 text-[#1A55CF] text-sm font-semibold px-5 py-2.5 rounded-full">
+          ✓ Socio activo de la Unión de Cámaras y Asociaciones de Bs. As. en Manejo de Control de Plagas (UCABA)
+        </span>
+      </div>
+    </div>
+  </section>
 
   <!-- ¿BUSCÁS SOLUCIONES EFECTIVAS? -->
-<section class="relative overflow-hidden bg-white py-10">
-  <!-- brillo suave de fondo (abajo) -->
-  <div class="pointer-events-none absolute inset-x-0 -bottom-24 h-56 bg-gradient-to-b from-transparent to-[#1A55CF]/8"></div>
-
-  <div class="relative max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
-    <!-- Título -->
-    <header class="text-center">
-      <h2 class="text-3xl font-extrabold tracking-tight text-[#0E1730] mb-1">
-        ¿BUSCÁS SOLUCIONES EFECTIVAS?
-      </h2>
-      <p class="text-lg text-slate-600">
-        Conocé nuestra fórmula para darte el mejor servicio.
-      </p>
-    </header>
-
-    <!-- Cards -->
-    <div class="mt-10 grid gap-6 md:grid-cols-3">
-      <!-- Card 1 -->
-      <article class="rounded-[28px] border-2 border-[#1A55CF] bg-white px-8 py-10 shadow-[0_18px_40px_rgba(26,85,207,.08)]">
-        <div class="flex justify-center">
-          <!-- ícono rayo -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                class="h-10 w-10 text-[#1A55CF]" fill="none" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-          </svg>
-        </div>
-        <h3 class="mt-4 text-center text-xl font-extrabold tracking-wide uppercase text-[#0E1730]">
-          Rapidez
-        </h3>
-        <p class="mt-3 text-center leading-7 text-slate-700">
-          Coordinamos visitas, servicios y controles según la disponibilidad de tu empresa, ofreciendo una atención rápida y efectiva, porque tu tiempo es prioridad.
-        </p>
-      </article>
-
-      <!-- Card 2 -->
-      <article class="rounded-[28px] border-2 border-[#1A55CF] bg-white px-8 py-10 shadow-[0_18px_40px_rgba(26,85,207,.08)]">
-        <div class="flex justify-center">
-          <!-- ícono escudo -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                class="h-10 w-10 text-[#1A55CF]" fill="none" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <circle cx="12" cy="11" r="2" />
-          </svg>
-        </div>
-        <h3 class="mt-4 text-center text-xl font-extrabold tracking-wide uppercase text-[#0E1730]">
-          Seguridad
-        </h3>
-        <p class="mt-3 text-center leading-7 text-slate-700">
-          Capacitamos continuamente a nuestros técnicos para un soporte de excelencia. El equipo es supervisado por nuestros Directores Técnicos para asegurar máxima calidad.
-        </p>
-      </article>
-
-      <!-- Card 3 -->
-      <article class="rounded-[28px] border-2 border-[#1A55CF] bg-white px-8 py-10 shadow-[0_18px_40px_rgba(26,85,207,.08)]">
-        <div class="flex justify-center">
-          <!-- ícono pulgar + signos -->
-          <!-- Ícono check en círculo -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-              class="h-10 w-10 text-[#1A55CF]" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 12l2.5 2.5L16 9" />
-        </svg>
-
-        </div>
-        <h3 class="mt-4 text-center text-xl font-extrabold tracking-wide uppercase text-[#0E1730]">
-          Calidad
-        </h3>
-        <p class="mt-3 text-center leading-7 text-slate-700">
-          Utilizamos productos de última generación de proveedores reconocidos en el mercado, garantizando la máxima efectividad y resultados en nuestras soluciones.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!--------------------------------------------------------------------------------------------------------------->
-
-<!-- CTA: Nuestra efectividad como garantía -->
-<section class="bg-[#2E73E3] py-12 sm:py-14">
-  <div class="max-w-6xl mx-auto px-5 text-center">
-    <h3 class="text-white text-2xl sm:text-3xl font-semibold">
-      Nuestra efectividad como garantía
-    </h3>
-
-    <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8">
-      <!-- Botón 1 -->
-      <a href="#contacto"
-          class="inline-flex items-center justify-center rounded-full bg-white text-[#2E73E3] font-semibold
-                px-8 sm:px-10 py-3.5 sm:py-4 shadow-[0_10px_24px_rgba(0,0,0,.12)] min-w-[260px] sm:min-w-[360px]
-                hover:opacity-95 transition">
-        Hacé tu consulta
-      </a>
-
-      <!-- Botón 2 -->
-      <a href="#servicios"
-          class="inline-flex items-center justify-center rounded-full bg-white text-[#2E73E3] font-semibold
-                px-8 sm:px-10 py-3.5 sm:py-4 shadow-[0_10px_24px_rgba(0,0,0,.12)] min-w-[260px] sm:min-w-[360px]
-                hover:opacity-95 transition">
-        Nuestros servicios
-      </a>
-    </div>
-  </div>
-</section>
-
-<!------------------------------------------SERVICIOS---------------------------------------------->
-
-<!-- SERVICIOS -->
-<section id="servicios" class="bg-[#f6f9fc]">
-  <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 py-16">
-    <h2 class="text-center text-3xl font-extrabold text-[#0E1730] mb-10">
-      SERVICIOS
-    </h2>
-
-    <!-- BLOQUE 1 -->
-    <div class="bg-[#edf3fb] rounded-2xl py-10 px-6 mb-8">
-      <div class="text-center">
-        <div class="flex justify-center mb-2">
-          <!-- icono insecto -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24""
-                class="h-7 w-7 text-[#1A55CF]" fill="none" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M9 9h6v6H9zM12 3v3M4 12h16M5 7l2 2M19 7l-2 2M5 17l2-2M19 17l-2-2"/>
-          </svg>
-        </div>
-        <h3 class="text-[#1A55CF] font-bold text-lg mb-6 uppercase">CONTROL DE PLAGAS</h3>
-
-        <div class="grid md:grid-cols-2 gap-6 text-slate-700 max-w-4xl mx-auto">
-          <div>
-            <h4 class="font-semibold mb-1">DESINSECTACIÓN</h4>
-            <p>
-              Controla insectos en un entorno específico para evitar daños y molestias.
-              Esta técnica es crucial y su objetivo es mantener la higiene en el lugar
-              de trabajo para preservar la salud de tus empleados.
-            </p>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-1">DESRATIZACIÓN</h4>
-            <p>
-              Es el proceso para controlar poblaciones de ratas en un entorno determinado.
-              Es esencial para prevenir enfermedades como Leptospirosis y Hantavirus.
-              También realizamos este servicio previo a una demolición.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- BLOQUE 2 -->
-    <div class="bg-[#f2f6fd] rounded-2xl py-10 px-6 mb-8">
-      <div class="text-center">
-        <div class="flex justify-center mb-2">
-          <!-- icono escudo sanitario -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                class="h-7 w-7 text-[#1A55CF]" fill="none" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M12 12m-3.5 0a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0 -7 0" />
-            <path d="M12 3v2m0 14v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M3 12h2m14 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
-            <circle cx="12" cy="11" r="2"/>
-          </svg>
-        </div>
-        <h3 class="text-[#1A55CF] font-bold text-lg mb-6 uppercase">CONTROL DE PATÓGENOS</h3>
-
-        <div class="max-w-3xl mx-auto text-slate-700">
-          <h4 class="font-semibold mb-1">DESINFECCIÓN</h4>
-          <p>
-            Implica eliminar microorganismos patógenos presentes en superficies y ambientes infestados.
-            Este procedimiento es muy importante para prevenir la propagación de enfermedades.
-            Se utilizan desinfectantes específicos que aseguran la erradicación de bacterias, virus y hongos.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- BLOQUE 3 -->
-    <div class="bg-[#edf3fb] rounded-2xl py-10 px-6 mb-8">
-      <div class="text-center">
-<div class="flex justify-center mb-2">
-  <!-- icono gota de agua -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-        class="h-7 w-7 text-[#1A55CF]" fill="none" stroke="currentColor" stroke-width="2">
-    <path stroke-linecap="round" stroke-linejoin="round"
-          d="M12 3C12 3 6 9 6 14a6 6 0 0 0 12 0c0-5-6-11-6-11z" />
-  </svg>
-</div>
-<h3 class="text-[#1A55CF] font-bold text-lg mb-6 uppercase">TANQUES DE AGUA</h3>
-
-
-        <div class="max-w-3xl mx-auto text-slate-700">
-          <h4 class="font-semibold mb-1">LIMPIEZA Y REPARACIÓN DE TANQUES DE AGUA</h4>
-          <p>
-            Implica eliminar microorganismos patógenos presentes en superficies y ambientes infestados.
-            Este procedimiento es muy importante para prevenir la propagación de enfermedades.
-            Se utilizan desinfectantes específicos que aseguran la erradicación de bacterias, virus y hongos.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- BLOQUE 4 -->
-    <div class="bg-[#f2f6fd] rounded-2xl py-10 px-6">
-      <div class="text-center">
-<div class="flex justify-center mb-2">
-  <!-- icono leaf -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-        class="h-7 w-7 text-[#1A55CF]" fill="none" stroke="currentColor" stroke-width="2">
-    <path stroke-linecap="round" stroke-linejoin="round"
-          d="M5 21c8 0 14-6 14-14 0 0-6 0-10 4S5 21 5 21z" />
-  </svg>
-</div>
-<h3 class="text-[#1A55CF] font-bold text-lg mb-6 uppercase">CONTROL DE ESPECIES PROTEGIDAS</h3>
-
-
-        <div class="grid md:grid-cols-3 gap-6 text-slate-700 max-w-5xl mx-auto">
-          <div>
-            <h4 class="font-semibold mb-1">PALOMAS</h4>
-            <p>
-              El control de palomas trata de reducir la población en áreas urbanas.
-              Este procedimiento implica diversas estrategias para desalentar su presencia
-              y minimizar su impacto negativo.
-            </p>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-1">MOSQUITOS</h4>
-            <p>
-              Se centra en reducir la población de estos insectos para prevenir enfermedades
-              transmitidas como el <strong>dengue</strong> y la <strong>chikungunya</strong>.
-            </p>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-1">MURCIÉLAGOS</h4>
-            <p>
-              Se enfoca en gestionar su presencia en áreas urbanas para reducir riesgos de salud.
-              El proceso incluye exclusión segura sellando puntos de entrada y aplicando
-              medidas preventivas para evitar su retorno.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-    <!------------------------------ CADA VEZ MAS CONECTADOS -------------------------------------->
-
-<!-- ESTAMOS CADA VEZ MÁS CONECTADOS -->
-<section class="relative w-full bg-cover bg-center bg-no-repeat"
-          style="background-image: url('./assets/img/hero2.webp');">
-  <!-- degradé inferior sutil -->
-  <div class="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-b from-transparent to-[#2E73E3]/20"></div>
-
-  <!-- Contenido -->
-  <div class="relative max-w-7xl mx-auto px-8 lg:px-20 py-24">
-    <div class="grid md:grid-cols-2 gap-12">
-      <!-- Columna texto -->
-      <div class="max-w-2xl pr-6 md:pr-16 bg-white/80 md:bg-transparent rounded-xl md:rounded-none">
-        <h2 class="text-3xl md:text-4xl font-extrabold leading-tight text-[#0E1730]">
-          ESTAMOS CADA VEZ<br class="hidden sm:block" />
-          MÁS CONECTADOS
+  <section class="bg-white py-14">
+    <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
+      <header class="text-center">
+        <h2 class="text-3xl font-extrabold tracking-tight text-[#0E1730] mb-1">
+          ¿BUSCÁS SOLUCIONES EFECTIVAS?
         </h2>
-        <p class="mt-2 text-xl text-slate-600">para darte el mejor servicio</p>
+        <p class="text-lg text-slate-600">
+          Conocé nuestra fórmula para darte el mejor servicio.
+        </p>
+      </header>
 
-        <div class="mt-8 space-y-5 text-slate-700">
-          <p>
-            <span class="font-semibold">Ofrecemos atención personalizada</span>
-            a través de teléfono, correo electrónico y WhatsApp para que puedas
-            ponerte en contacto con nosotros y brindar el apoyo que necesita tu empresa.
-          </p>
-          <p>
-            <span class="font-semibold">Nuestros técnicos reciben capacitación certificada continua</span>
-            para hacer frente a cualquier situación de manera efectiva.
-          </p>
-          <p>
-            <span class="font-semibold">Contamos con una APP de uso interno exclusiva para nuestro personal,</span>
-            que permite enviar de manera rápida la constancia del servicio realizado
-            para la tranquilidad de tu empresa.
+      <div class="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-4">
+        <div class="flex items-center gap-3">
+          <svg class="h-6 w-6 text-[#1A55CF] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-slate-800">Visita y cotización sin cargo</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <svg class="h-6 w-6 text-[#1A55CF] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-slate-800">Productos de última generación</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <svg class="h-6 w-6 text-[#1A55CF] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-slate-800">Atención personalizada</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <svg class="h-6 w-6 text-[#1A55CF] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-slate-800">Equipamiento y maquinaria de vanguardia</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <svg class="h-6 w-6 text-[#1A55CF] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-slate-800">Personal y técnicos certificados</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <svg class="h-6 w-6 text-[#1A55CF] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-slate-800">Coordinación operativa veloz</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <svg class="h-6 w-6 text-[#1A55CF] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-slate-800">Capacitaciones periódicas</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <svg class="h-6 w-6 text-[#1A55CF] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-slate-800">Supervisión de Dirección Técnica</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <svg class="h-6 w-6 text-[#1A55CF] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-slate-800">Gestión y trazabilidad digital</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <svg class="h-6 w-6 text-[#1A55CF] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span class="font-semibold text-slate-800">Análisis con laboratorios certificados</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA: Nuestra experiencia como garantía -->
+  <section class="bg-[#2E73E3] py-12 sm:py-14">
+    <div class="max-w-6xl mx-auto px-5 text-center">
+      <h3 class="text-white text-2xl sm:text-3xl font-semibold">
+        Nuestra experiencia como garantía
+      </h3>
+
+      <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8">
+        <a href="https://wa.me/5491135972561" target="_blank" rel="noopener"
+            class="inline-flex items-center justify-center rounded-full bg-[#25D366] text-white font-semibold
+                  px-8 sm:px-10 py-3.5 sm:py-4 shadow-[0_10px_24px_rgba(0,0,0,.12)] min-w-[260px] sm:min-w-[360px]
+                  hover:brightness-110 transition">
+          Enviar WhatsApp
+        </a>
+
+        <a href="#contacto"
+            class="inline-flex items-center justify-center rounded-full bg-white text-[#2E73E3] font-semibold
+                  px-8 sm:px-10 py-3.5 sm:py-4 shadow-[0_10px_24px_rgba(0,0,0,.12)] min-w-[260px] sm:min-w-[360px]
+                  hover:opacity-95 transition">
+          Hacé tu consulta
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="bg-[#f6f9fc] py-16 scroll-mt-16">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
+      <h2 class="text-center text-3xl font-extrabold text-[#0E1730] mb-3">
+        NUESTROS SERVICIOS
+      </h2>
+      <p class="flex items-center justify-center gap-2 text-[#1A55CF] font-semibold mb-10">
+        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        Certificados Oficiales
+      </p>
+
+      <!-- Control de Plagas: Desinsectación / Desratización / Desinfección -->
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="bg-white rounded-xl overflow-hidden shadow-[0_10px_24px_rgba(0,0,0,.06)]">
+          <div class="service-photo" style="background-image:url('./assets/img/cucarachas.webp');"></div>
+          <div class="bg-[#1A55CF] text-white text-center text-xs font-bold uppercase tracking-wide py-2">Desinsectación</div>
+          <div class="p-5 text-sm text-slate-700">
+            <span class="font-semibold text-slate-900">Controla insectos</span> para evitar daños y molestias, garantizando un entorno laboral higiénico y seguro para la salud de los empleados.
+          </div>
+        </article>
+
+        <article class="bg-white rounded-xl overflow-hidden shadow-[0_10px_24px_rgba(0,0,0,.06)]">
+          <div class="service-photo" style="background-image:url('./assets/img/ratas.webp');"></div>
+          <div class="bg-[#1A55CF] text-white text-center text-xs font-bold uppercase tracking-wide py-2">Desratización</div>
+          <div class="p-5 text-sm text-slate-700">
+            Controla poblaciones de ratas para prevenir enfermedades, siendo obligatorio/esencial también antes de una demolición.
+          </div>
+        </article>
+
+        <article class="bg-white rounded-xl overflow-hidden shadow-[0_10px_24px_rgba(0,0,0,.06)]">
+          <div class="service-photo" style="background-image:url('./assets/img/infecciones.webp');"></div>
+          <div class="bg-[#1A55CF] text-white text-center text-xs font-bold uppercase tracking-wide py-2">Desinfección</div>
+          <div class="p-5 text-sm text-slate-700">
+            <span class="font-semibold text-slate-900">Elimina microorganismos patógenos</span> en superficies y ambientes para prevenir enfermedades, aplicando desinfectantes específicos contra bacterias, virus y hongos.
+          </div>
+        </article>
+      </div>
+
+      <!-- Palomas / Murciélagos -->
+      <div class="mt-6 grid sm:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl p-6 shadow-[0_10px_24px_rgba(0,0,0,.06)]">
+          <h4 class="font-bold text-[#1A55CF] uppercase mb-2">🐦 Palomas</h4>
+          <p class="text-sm text-slate-700">
+            El control de palomas trata de reducir la población en áreas urbanas. Este procedimiento implica diversas estrategias para desalentar su presencia y minimizar su impacto negativo.
           </p>
         </div>
-
-        <!-- Botones -->
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="#contacto"
-              class="inline-flex items-center justify-center rounded-full bg-[#1A55CF] text-white font-semibold
-                    px-8 py-3.5 shadow-[0_10px_24px_rgba(26,85,207,.35)] hover:brightness-110 transition">
-            Hacé tu consulta
-          </a>
-          <a href="https://wa.me/5491135972561" target="_blank" rel="noopener"
-              class="inline-flex items-center justify-center rounded-full bg-[#1A55CF] text-white font-semibold
-                    px-8 py-3.5 shadow-[0_10px_24px_rgba(26,85,207,.35)] hover:brightness-110 transition">
-            Enviar WhatsApp
-          </a>
+        <div class="bg-white rounded-xl p-6 shadow-[0_10px_24px_rgba(0,0,0,.06)]">
+          <h4 class="font-bold text-[#1A55CF] uppercase mb-2">🦇 Murciélagos</h4>
+          <p class="text-sm text-slate-700">
+            Gestionamos la presencia urbana para reducir riesgos de salud, sellando accesos de forma segura y aplicando medidas preventivas para evitar su retorno.
+          </p>
         </div>
       </div>
 
-      <!-- Columna vacía para espacio de imagen -->
-      <div class="hidden md:block"></div>
+      <!-- Control de Mosquitos -->
+      <div class="mt-8 grid sm:grid-cols-2 gap-0 bg-white rounded-xl overflow-hidden shadow-[0_10px_24px_rgba(0,0,0,.06)]">
+        <div class="service-photo !h-full !rounded-none min-h-[180px]" style="background-image:url('./assets/img/mosquito.webp');"></div>
+        <div class="p-6">
+          <div class="inline-block bg-[#1A55CF] text-white text-xs font-bold uppercase tracking-wide py-2 px-4 rounded mb-3">Control de Mosquitos</div>
+          <p class="font-semibold text-slate-900">
+            Anticípate a la época de mayor actividad de insectos con un plan integral de control y prevención.
+          </p>
+          <p class="mt-2 text-sm text-slate-700">
+            Implementamos tratamientos específicos dirigidos a erradicar criaderos y reducir de manera drástica las poblaciones de mosquitos en sus instalaciones. De esta forma, protegemos su espacio laboral o residencial frente a la proliferación de vectores y mitigamos de manera continua los riesgos asociados a enfermedades como el <strong>dengue</strong>, la <strong>chikungunya</strong> y el <strong>zika</strong>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tanques de Agua -->
+      <div class="mt-6 grid sm:grid-cols-2 gap-0 bg-white rounded-xl overflow-hidden shadow-[0_10px_24px_rgba(0,0,0,.06)]">
+        <div class="p-6 order-2 sm:order-1">
+          <div class="inline-block bg-[#1A55CF] text-white text-xs font-bold uppercase tracking-wide py-2 px-4 rounded mb-3">Limpieza y Reparación de Tanques de Agua</div>
+          <p class="font-semibold text-slate-900">
+            Asegurá la calidad del agua en tus instalaciones con un servicio integral de limpieza y desinfección de tanques.
+          </p>
+          <p class="mt-2 text-sm text-slate-700">
+            Limpieza, desinfección y control analítico de tanques de agua. Evaluamos la calidad del agua mediante análisis de laboratorio y entregamos los certificados correspondientes para garantizar un entorno seguro y en regla.
+          </p>
+          <p class="mt-3 text-sm font-semibold text-[#1A55CF]">
+            ✓ Análisis Bacteriológico &nbsp;&nbsp; ✓ Análisis Fisicoquímico
+          </p>
+        </div>
+        <div class="service-photo !h-full !rounded-none min-h-[180px] order-1 sm:order-2" style="background-image:url('./assets/img/manoslavandose.webp');"></div>
+      </div>
+
+      <div class="mt-10 text-center">
+        <p class="inline-flex items-center gap-3 flex-wrap justify-center text-[#0E1730] font-semibold">
+          ¿Listo para obtener tu certificado oficial?
+          <a href="#contacto" class="inline-flex items-center justify-center bg-[#1A55CF] text-white text-sm font-bold uppercase px-5 py-2.5 rounded hover:brightness-110 transition">
+            Solicitar Presupuesto
+          </a>
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FORMULARIO DE CONTACTO -->
-<!-- CONTACTO (sección completa) -->
-<section id="contacto" class="bg-[#2E73E3] py-16">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12">
-    <h2 class="text-center text-white text-3xl font-extrabold tracking-wide">
-      CONTACTO
-    </h2>
+  <!-- ESTAMOS CADA VEZ MÁS CONECTADOS -->
+  <section class="bg-white py-16 border-t border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Columna texto -->
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold leading-tight text-[#0E1730]">
+            ESTAMOS CADA VEZ<br/>
+            MÁS CONECTADOS
+          </h2>
+          <p class="mt-2 text-lg text-slate-600">para darte el mejor servicio</p>
 
-    <div class="mt-10 grid gap-10 md:grid-cols-[minmax(0,560px)_520px] items-start">
+          <div class="mt-6 space-y-4 text-slate-700">
+            <p>
+              <span class="font-semibold">Ofrecemos atención personalizada</span>
+              a través de teléfono, correo electrónico y WhatsApp para que puedas
+              ponerte en contacto con nosotros y brindar el apoyo que necesita tu empresa.
+            </p>
+            <p>
+              <span class="font-semibold">Contamos con una APP de uso interno exclusiva para nuestro personal,</span>
+              que permite enviar de manera rápida la constancia del servicio realizado
+              para la tranquilidad de tu empresa.
+            </p>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="https://wa.me/5491135972561" target="_blank" rel="noopener"
+                class="inline-flex items-center justify-center rounded-full bg-[#25D366] text-white font-semibold
+                      px-7 py-3 hover:brightness-110 transition">
+              Enviar WhatsApp
+            </a>
+            <a href="#contacto"
+                class="inline-flex items-center justify-center rounded-full bg-[#1A55CF] text-white font-semibold
+                      px-7 py-3 hover:brightness-110 transition">
+              Hacé tu consulta
+            </a>
+          </div>
+        </div>
+
+        <!-- Tarjetas -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-[#1A55CF] text-white rounded-xl p-6 flex flex-col items-center text-center gap-2">
+            <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span class="font-semibold text-sm">Garantía de calidad</span>
+          </div>
+          <div class="bg-[#1A55CF] text-white rounded-xl p-6 flex flex-col items-center text-center gap-2">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4l-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L12 2z"/></svg>
+            <span class="font-semibold text-sm">Certificados oficiales</span>
+          </div>
+          <div class="bg-[#1A55CF] text-white rounded-xl p-6 flex flex-col items-center text-center gap-2">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0"/></svg>
+            <span class="font-semibold text-sm">Personal capacitado</span>
+          </div>
+          <div class="bg-[#1A55CF] text-white rounded-xl p-6 flex flex-col items-center text-center gap-2">
+            <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+            <span class="font-semibold text-sm">Rápida respuesta</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO + ZONAS DE COBERTURA -->
+  <section id="contacto" class="bg-[#2E73E3] scroll-mt-16">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2">
       <!-- Columna: Formulario -->
-      <div class="max-w-[560px]">
-        <h3 class="text-white font-bold uppercase tracking-wide mb-3">Pedí tu presupuesto</h3>
+      <div class="px-6 sm:px-10 py-16">
+        <h2 class="text-white text-2xl font-extrabold uppercase tracking-wide mb-6">
+          Pedí tu cotización
+        </h2>
 
-        <!-- FORMULARIO DE CONTACTO -->
         <form id="contactForm"
               action="https://formsubmit.co/info@campanafumigaciones.com.ar"
               method="POST"
-              class="space-y-4">
+              class="space-y-4 max-w-md">
 
-          <!-- Config ocultas -->
           <input type="hidden" name="_subject" value="Nuevo mensaje desde la web - Campana Fumigaciones">
           <input type="hidden" name="_captcha" value="false">
 
           <label class="block">
             <input type="text" name="nombre" placeholder="Nombre" required
-                    class="w-full max-w-[560px] bg-white text-slate-800 placeholder-slate-500 px-4 py-3 h-12
+                    class="w-full bg-white text-slate-800 placeholder-slate-500 px-4 py-3 h-12
                           rounded-sm border-0 focus:outline-none focus:ring-2 focus:ring-white/60" />
           </label>
 
           <label class="block">
             <input type="email" name="email" placeholder="E-mail" required
-                    class="w-full max-w-[560px] bg-white text-slate-800 placeholder-slate-500 px-4 py-3 h-12
+                    class="w-full bg-white text-slate-800 placeholder-slate-500 px-4 py-3 h-12
                           rounded-sm border-0 focus:outline-none focus:ring-2 focus:ring-white/60" />
           </label>
 
           <label class="block">
             <input type="tel" name="telefono" placeholder="Teléfono"
-                    class="w-full max-w-[560px] bg-white text-slate-800 placeholder-slate-500 px-4 py-3 h-12
+                    class="w-full bg-white text-slate-800 placeholder-slate-500 px-4 py-3 h-12
                           rounded-sm border-0 focus:outline-none focus:ring-2 focus:ring-white/60" />
           </label>
 
           <label class="block">
             <textarea name="consulta" rows="5" placeholder="Consulta"
-                      class="w-full max-w-[560px] bg-white text-slate-800 placeholder-slate-500 px-4 py-3
+                      class="w-full bg-white text-slate-800 placeholder-slate-500 px-4 py-3
                               rounded-sm border-0 focus:outline-none focus:ring-2 focus:ring-white/60"></textarea>
           </label>
 
@@ -525,130 +534,216 @@
           </button>
         </form>
 
-        <!-- Mensaje de éxito con animación (inicialmente oculto) -->
         <div id="successMessage"
-              class="hidden mt-6 bg-white text-[#2E73E3] font-semibold p-4 rounded shadow
+              class="hidden mt-6 max-w-md bg-white text-[#2E73E3] font-semibold p-4 rounded shadow
                     transition-opacity duration-500 opacity-0">
           ¡Gracias por tu mensaje! Nos pondremos en contacto a la brevedad.
         </div>
       </div>
 
-      <!-- Columna: Mapa -->
-      <div class="max-w-[520px] w-full justify-self-start md:justify-self-end">
-        <h3 class="text-white font-bold uppercase tracking-wide mb-3">Encontranos</h3>
-        <div class="bg-white/10 rounded-sm overflow-hidden">
-          <!-- Reemplazá el src por el embed exacto de tu dirección -->
-          <iframe
-            class="w-full h-[360px]"
-            style="border:0"
-            loading="lazy"
-            allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.0997038240675!2d-58.409112160654615!3d-34.652184873049656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb702d75cab9%3A0x7c58fef7fa7a375!2sMagnaud%2C%20Juez%201249%2C%20C1437EKC%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1761705697282!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <!-- Columna: Zonas de cobertura -->
+      <div id="zonas" class="bg-white px-6 sm:px-10 py-16 scroll-mt-16">
+        <h3 class="text-[#1A55CF] font-extrabold uppercase tracking-wide mb-6">
+          Zonas de Cobertura
+        </h3>
+
+        <div class="space-y-3 text-slate-800 font-semibold">
+          <p class="flex items-center gap-2">
+            <svg class="h-5 w-5 text-[#1A55CF] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Ciudad Autónoma de Bs. As. (CABA)
+          </p>
+          <div class="flex flex-wrap gap-x-8 gap-y-3">
+            <p class="flex items-center gap-2">
+              <svg class="h-5 w-5 text-[#1A55CF] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              Zona Sur GBA
+            </p>
+            <p class="flex items-center gap-2">
+              <svg class="h-5 w-5 text-[#1A55CF] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              Zona Norte GBA
+            </p>
+          </div>
+          <p class="flex items-center gap-2">
+            <svg class="h-5 w-5 text-[#1A55CF] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Zona Oeste GBA
+          </p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Script de envío + animación (ponelo una sola vez, cerca del cierre de </body>) -->
-<script>
-  const form = document.getElementById('contactForm');
-  const success = document.getElementById('successMessage');
+        <a href="tel:+541149115981"
+           class="mt-8 inline-flex items-center justify-center text-center bg-[#1A55CF] text-white text-sm font-semibold px-6 py-4 rounded hover:brightness-110 transition">
+          Visita Técnica Sin Cargo en C.A.B.A.<br class="hidden sm:block"> y Gran Buenos Aires
+        </a>
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault(); // evita recargar
-    const data = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        form.reset();
-        form.classList.add('hidden');           // oculta el formulario
-        success.classList.remove('hidden');      // muestra el mensaje
-        setTimeout(() => success.classList.add('opacity-100'), 100); // fade-in
-      } else {
-        alert('Hubo un error al enviar el formulario. Intente nuevamente.');
-      }
-    } catch (error) {
-      alert('Error de conexión. Por favor, intente más tarde.');
-    }
-  });
-</script>
-
-<!-- FOOTER -->
-<footer class="bg-white border-t">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8 py-10">
-    <!-- Logo -->
-    <div class="flex justify-center mb-6">
-      <img src="./assets/img/logo.webp" alt="Campana Fumigaciones" class="h-12 w-auto">
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- NOSOTROS -->
-      <div>
-        <h3 class="text-[#0E1730] text-lg font-extrabold tracking-wide">NOSOTROS</h3>
-        <p class="mt-1 text-sm leading-relaxed text-slate-700">
-          <span class="font-semibold">48 años de experiencia</span><br>
-          garantizando tu bienestar con soluciones en sanidad ambiental.
-        </p>
-      </div>
-
-      <!-- CONTACTO -->
-      <div>
-        <h3 class="text-[#0E1730] text-lg font-extrabold tracking-wide">CONTACTO</h3>
-
-        <!-- WhatsApp -->
-        <div class="mt-2 flex items-center gap-2 text-sm text-slate-700">
-          <!-- ícono WhatsApp -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-4 h-4 fill-[#25D366] shrink-0">
-            <path d="M19.11 17.36c-.27-.13-1.6-.79-1.85-.88s-.43-.13-.61.13-.69.88-.84 1.06-.31.2-.58.07a6.94 6.94 0 0 1-2.03-1.26 7.78 7.78 0 0 1-1.45-1.8c-.15-.26 0-.4.11-.53.11-.11.26-.27.38-.41.13-.14.17-.24.26-.41s.05-.31-.02-.43c-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.46h-.52c-.18 0-.44.06-.67.31-.23.26-.89.87-.89 2.13s.91 2.47 1.03 2.64c.13.18 1.81 2.77 4.4 3.88.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.08 1.6-.65 1.82-1.29.23-.64.23-1.18.16-1.29-.07-.11-.25-.18-.52-.31z"/>
-            <path d="M26.93 5.07A13.94 13.94 0 0 0 16 1C8.27 1 2 7.27 2 15a13.9 13.9 0 0 0 2.06 7.29L2 31l9-2.96A13.95 13.95 0 0 0 16 29c7.73 0 14-6.27 14-14 0-3.74-1.46-7.26-3.07-9.93Zm-10.93 22A11.97 11.97 0 0 1 10.3 26l-.35-.21-5.32 1.75 1.75-5.16-.23-.37A11.98 11.98 0 1 1 16 27.07Z"/>
-          </svg>
-          <div class="flex flex-wrap gap-x-2">
-            <a href="https://wa.me/541135972561" target="_blank" rel="noopener"
-               class="text-[#0E1730] hover:text-[#1A55CF] font-medium">11 3597-2561</a>
+        <!-- Datos de contacto -->
+        <div class="mt-10 pt-8 border-t border-slate-100 space-y-3 text-sm text-slate-700">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-4 h-4 fill-[#25D366] shrink-0">
+              <path d="M19.11 17.36c-.27-.13-1.6-.79-1.85-.88s-.43-.13-.61.13-.69.88-.84 1.06-.31.2-.58.07a6.94 6.94 0 0 1-2.03-1.26 7.78 7.78 0 0 1-1.45-1.8c-.15-.26 0-.4.11-.53.11-.11.26-.27.38-.41.13-.14.17-.24.26-.41s.05-.31-.02-.43c-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.46h-.52c-.18 0-.44.06-.67.31-.23.26-.89.87-.89 2.13s.91 2.47 1.03 2.64c.13.18 1.81 2.77 4.4 3.88.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.08 1.6-.65 1.82-1.29.23-.64.23-1.18.16-1.29-.07-.11-.25-.18-.52-.31z"/>
+              <path d="M26.93 5.07A13.94 13.94 0 0 0 16 1C8.27 1 2 7.27 2 15a13.9 13.9 0 0 0 2.06 7.29L2 31l9-2.96A13.95 13.95 0 0 0 16 29c7.73 0 14-6.27 14-14 0-3.74-1.46-7.26-3.07-9.93Zm-10.93 22A11.97 11.97 0 0 1 10.3 26l-.35-.21-5.32 1.75 1.75-5.16-.23-.37A11.98 11.98 0 1 1 16 27.07Z"/>
+            </svg>
+            <a href="https://wa.me/541135972561" target="_blank" rel="noopener" class="hover:text-[#1A55CF] font-medium">11 3597-2561</a>
             <span>|</span>
-            <a href="https://wa.me/541167460159" target="_blank" rel="noopener"
-               class="text-[#0E1730] hover:text-[#1A55CF] font-medium">11 6746-0159</a>
+            <a href="https://wa.me/541167460159" target="_blank" rel="noopener" class="hover:text-[#1A55CF] font-medium">11 6746-0159</a>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 fill-[#0E1730] shrink-0">
+              <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V21c0 .55-.45 1-1 1C10.85 22 2 13.15 2 2c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
+            </svg>
+            <a href="tel:+541149115981" class="hover:text-[#1A55CF] font-medium">4911-5981</a>
+          </div>
+          <div class="flex items-start gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-[#0E1730] shrink-0 mt-0.5" viewBox="0 0 24 24">
+              <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/>
+            </svg>
+            <address class="not-italic leading-tight">Pje. Juez Magnaud 1249, C.A.B.A.</address>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Teléfono fijo -->
-        <div class="mt-1 flex items-center gap-2 text-sm text-slate-700">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 fill-[#0E1730] shrink-0">
-            <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V21c0 .55-.45 1-1 1C10.85 22 2 13.15 2 2c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
-          </svg>
-          <a href="tel:+541149115981" class="text-[#0E1730] hover:text-[#1A55CF] font-medium">4911-5981</a>
+  <!-- RESEÑAS -->
+  <!-- TODO: sección de reseñas conectada a Google Business. Para traer reseñas reales de
+       forma dinámica hace falta un widget de terceros (ej. Elfsight, Trustindex, EmbedSocial)
+       apuntando al Place ID de Google Business de la empresa; no es algo que se resuelva solo
+       con HTML/CSS estático. Mientras tanto se deja el bloque visual con contenido de ejemplo. -->
+  <section class="bg-[#f6f9fc] py-16">
+    <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-extrabold text-[#0E1730]">+ 50 años dando soluciones</h2>
+      <p class="text-lg text-slate-600 mb-8">a nuestros clientes</p>
+
+      <div class="text-center">
+        <p class="text-4xl sm:text-5xl font-extrabold text-[#0E1730]">4.7/5.0</p>
+        <div class="flex justify-center gap-1 mt-2 text-2xl text-yellow-400" aria-hidden="true">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
         </div>
+        <p class="mt-2 text-sm text-slate-600">Más de 20 valoraciones de empresas, consorcios e industrias.</p>
 
-        <!-- Email -->
-        <div class="mt-1 flex items-center gap-2 text-sm text-slate-700">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-[#0E1730] shrink-0" viewBox="0 0 24 24">
-            <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/>
-          </svg>
-          <a href="mailto:info@campanafumigaciones.com.ar"
-             class="text-[#0E1730] hover:text-[#1A55CF] font-medium">
-            info@campanafumigaciones.com.ar
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
+          <a href="#" class="inline-flex items-center justify-center bg-red-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:brightness-110 transition">
+            Dejanos tu opinión
+          </a>
+          <a href="#" class="inline-flex items-center justify-center bg-[#1A55CF] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:brightness-110 transition">
+            Ver todas las reseñas
           </a>
         </div>
+      </div>
 
-        <!-- Dirección -->
-        <div class="mt-1 flex items-start gap-2 text-sm text-slate-700">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-[#0E1730] shrink-0" viewBox="0 0 24 24">
-            <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/>
-          </svg>
-          <address class="not-italic leading-tight">Pje. Juez Magnaud 1249, C.A.B.A.</address>
+      <div class="mt-10 grid sm:grid-cols-3 gap-5">
+        <div class="bg-white rounded-xl p-5 flex gap-3 shadow-[0_10px_24px_rgba(0,0,0,.05)]">
+          <div class="h-10 w-10 rounded-full bg-slate-300 shrink-0"></div>
+          <p class="text-sm text-slate-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 flex gap-3 shadow-[0_10px_24px_rgba(0,0,0,.05)]">
+          <div class="h-10 w-10 rounded-full bg-slate-300 shrink-0"></div>
+          <p class="text-sm text-slate-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 flex gap-3 shadow-[0_10px_24px_rgba(0,0,0,.05)]">
+          <div class="h-10 w-10 rounded-full bg-slate-300 shrink-0"></div>
+          <p class="text-sm text-slate-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
+
+  <!-- Script de envío + animación -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('successMessage');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); // evita recargar
+      const data = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.reset();
+          form.classList.add('hidden');           // oculta el formulario
+          success.classList.remove('hidden');      // muestra el mensaje
+          setTimeout(() => success.classList.add('opacity-100'), 100); // fade-in
+        } else {
+          alert('Hubo un error al enviar el formulario. Intente nuevamente.');
+        }
+      } catch (error) {
+        alert('Error de conexión. Por favor, intente más tarde.');
+      }
+    });
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 py-10">
+      <!-- Logo -->
+      <!-- TODO: reemplazar por el logo nuevo en alta -->
+      <div class="flex justify-center mb-6">
+        <img src="./assets/img/logo.webp" alt="Campana Fumigaciones" class="h-12 w-auto">
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- NOSOTROS -->
+        <div>
+          <h3 class="text-[#0E1730] text-lg font-extrabold tracking-wide">NOSOTROS</h3>
+          <p class="mt-1 text-sm leading-relaxed text-slate-700">
+            <span class="font-semibold">50 años de experiencia</span><br>
+            garantizando tu bienestar con soluciones en sanidad ambiental.
+          </p>
+        </div>
+
+        <!-- CONTACTO -->
+        <div>
+          <h3 class="text-[#0E1730] text-lg font-extrabold tracking-wide">CONTACTO</h3>
+
+          <!-- WhatsApp -->
+          <div class="mt-2 flex items-center gap-2 text-sm text-slate-700">
+            <!-- ícono WhatsApp -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-4 h-4 fill-[#25D366] shrink-0">
+              <path d="M19.11 17.36c-.27-.13-1.6-.79-1.85-.88s-.43-.13-.61.13-.69.88-.84 1.06-.31.2-.58.07a6.94 6.94 0 0 1-2.03-1.26 7.78 7.78 0 0 1-1.45-1.8c-.15-.26 0-.4.11-.53.11-.11.26-.27.38-.41.13-.14.17-.24.26-.41s.05-.31-.02-.43c-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.46h-.52c-.18 0-.44.06-.67.31-.23.26-.89.87-.89 2.13s.91 2.47 1.03 2.64c.13.18 1.81 2.77 4.4 3.88.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.08 1.6-.65 1.82-1.29.23-.64.23-1.18.16-1.29-.07-.11-.25-.18-.52-.31z"/>
+              <path d="M26.93 5.07A13.94 13.94 0 0 0 16 1C8.27 1 2 7.27 2 15a13.9 13.9 0 0 0 2.06 7.29L2 31l9-2.96A13.95 13.95 0 0 0 16 29c7.73 0 14-6.27 14-14 0-3.74-1.46-7.26-3.07-9.93Zm-10.93 22A11.97 11.97 0 0 1 10.3 26l-.35-.21-5.32 1.75 1.75-5.16-.23-.37A11.98 11.98 0 1 1 16 27.07Z"/>
+            </svg>
+            <div class="flex flex-wrap gap-x-2">
+              <a href="https://wa.me/541135972561" target="_blank" rel="noopener"
+                 class="text-[#0E1730] hover:text-[#1A55CF] font-medium">11 3597-2561</a>
+              <span>|</span>
+              <a href="https://wa.me/541167460159" target="_blank" rel="noopener"
+                 class="text-[#0E1730] hover:text-[#1A55CF] font-medium">11 6746-0159</a>
+            </div>
+          </div>
+
+          <!-- Teléfono fijo -->
+          <div class="mt-1 flex items-center gap-2 text-sm text-slate-700">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 fill-[#0E1730] shrink-0">
+              <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V21c0 .55-.45 1-1 1C10.85 22 2 13.15 2 2c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
+            </svg>
+            <a href="tel:+541149115981" class="text-[#0E1730] hover:text-[#1A55CF] font-medium">4911-5981</a>
+          </div>
+
+          <!-- Email -->
+          <div class="mt-1 flex items-center gap-2 text-sm text-slate-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-[#0E1730] shrink-0" viewBox="0 0 24 24">
+              <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/>
+            </svg>
+            <a href="mailto:info@campanafumigaciones.com.ar"
+               class="text-[#0E1730] hover:text-[#1A55CF] font-medium">
+              info@campanafumigaciones.com.ar
+            </a>
+          </div>
+
+          <!-- Dirección -->
+          <div class="mt-1 flex items-start gap-2 text-sm text-slate-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-[#0E1730] shrink-0" viewBox="0 0 24 24">
+              <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/>
+            </svg>
+            <address class="not-italic leading-tight">Pje. Juez Magnaud 1249, C.A.B.A.</address>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
   <script>
