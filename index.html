@@ -662,9 +662,10 @@
 
   <!-- CONTACTO + ZONAS DE COBERTURA -->
   <section id="contacto" class="bg-[#2E73E3] scroll-mt-16">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2">
+    <div class="grid md:grid-cols-2">
       <!-- Columna: Formulario -->
-      <div class="px-6 sm:px-10 py-16">
+      <div class="px-6 sm:px-10 py-16 flex justify-center md:justify-end">
+        <div class="w-full max-w-md">
         <h2 class="text-white text-2xl font-extrabold uppercase tracking-wide mb-6">
           Pedí tu cotización
         </h2>
@@ -672,7 +673,7 @@
         <form id="contactForm"
               action="https://formsubmit.co/info@campanafumigaciones.com.ar"
               method="POST"
-              class="space-y-4 max-w-md">
+              class="space-y-4">
 
           <input type="hidden" name="_subject" value="Nuevo mensaje desde la web - Campana Fumigaciones">
           <input type="hidden" name="_captcha" value="false">
@@ -709,14 +710,16 @@
         </form>
 
         <div id="successMessage"
-              class="hidden mt-6 max-w-md bg-white text-[#2E73E3] font-semibold p-4 rounded shadow
+              class="hidden mt-6 bg-white text-[#2E73E3] font-semibold p-4 rounded shadow
                     transition-opacity duration-500 opacity-0">
           ¡Gracias por tu mensaje! Nos pondremos en contacto a la brevedad.
+        </div>
         </div>
       </div>
 
       <!-- Columna: Zonas de cobertura -->
-      <div id="zonas" class="bg-white px-6 sm:px-10 py-16 scroll-mt-16 flex flex-col justify-center h-full">
+      <div id="zonas" class="bg-white px-6 sm:px-10 py-16 scroll-mt-16 flex flex-col items-center md:items-start justify-center">
+        <div class="w-full max-w-md">
         <h3 class="text-[#1A55CF] font-extrabold uppercase tracking-wide mb-6">
           Zonas de Cobertura
         </h3>
@@ -773,6 +776,7 @@
             </svg>
             <address class="not-italic leading-tight">Pje. Juez Magnaud 1249, C.A.B.A.</address>
           </div>
+        </div>
         </div>
       </div>
     </div>
