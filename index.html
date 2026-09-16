@@ -82,7 +82,15 @@
     .btn-wave > span{
       position: relative;
       z-index: 1;
-      transition: color .4s ease;
+      display: inline-flex;
+      align-items: center;
+      transition: color .4s ease, transform .3s ease;
+    }
+    /* El levante es del contenido interno, no del botón: así el botón
+       (que sí recibe el :hover) nunca se mueve y no "escapa" del cursor
+       cuando queda justo en su borde (evita el parpadeo). */
+    .btn-wave:hover > span{
+      transform: translateY(-3px);
     }
     .btn-wave::before{
       content: "";
@@ -116,11 +124,23 @@
     .btn-wave-outline:hover > span{ color: #1A55CF; }
     .btn-wave-outline:hover{ border-color: #fff; }
 
+    /* Mismo criterio que en .btn-wave: la tarjeta (que recibe el :hover)
+       queda quieta, y el levante se aplica al contenido interno. */
+    .info-card-inner{
+      transition: transform .3s ease;
+    }
+    .info-card:hover .info-card-inner{
+      transform: translateY(-4px);
+    }
+
     @media (prefers-reduced-motion: reduce){
       /* Sin animación, pero el cambio de color se mantiene: aparece
          directo (sin la onda) en vez de animado. */
       .btn-wave::before{ transition: none; }
       .btn-wave > span{ transition: none; }
+      .btn-wave:hover > span{ transform: none; }
+      .info-card-inner{ transition: none; }
+      .info-card:hover .info-card-inner{ transform: none; }
     }
 
     /* Foto de tarjeta de servicio: el marco recorta el zoom, así la imagen
@@ -639,21 +659,29 @@
 
         <!-- Tarjetas -->
         <div class="grid grid-cols-2 gap-4">
-          <div class="reveal bg-[#1A55CF] text-white rounded-xl p-6 flex flex-col items-center text-center gap-2 transition-transform duration-300 hover:scale-[1.03] hover:shadow-lg">
+          <div class="info-card reveal bg-[#1A55CF] text-white rounded-xl p-6 flex flex-col items-center text-center gap-2 transition-transform duration-300 hover:scale-[1.03] hover:shadow-lg">
+            <div class="info-card-inner flex flex-col items-center gap-2">
             <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
             <span class="font-semibold text-sm">Garantía de calidad</span>
+            </div>
           </div>
-          <div class="reveal bg-[#1A55CF] text-white rounded-xl p-6 flex flex-col items-center text-center gap-2 transition-transform duration-300 hover:scale-[1.03] hover:shadow-lg" style="transition-delay:.1s">
+          <div class="info-card reveal bg-[#1A55CF] text-white rounded-xl p-6 flex flex-col items-center text-center gap-2 transition-transform duration-300 hover:scale-[1.03] hover:shadow-lg" style="transition-delay:.1s">
+            <div class="info-card-inner flex flex-col items-center gap-2">
             <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 11.3 7 21l5-3 5 3-2-9.7"/></svg>
             <span class="font-semibold text-sm">Certificados oficiales</span>
+            </div>
           </div>
-          <div class="reveal bg-[#1A55CF] text-white rounded-xl p-6 flex flex-col items-center text-center gap-2 transition-transform duration-300 hover:scale-[1.03] hover:shadow-lg" style="transition-delay:.2s">
+          <div class="info-card reveal bg-[#1A55CF] text-white rounded-xl p-6 flex flex-col items-center text-center gap-2 transition-transform duration-300 hover:scale-[1.03] hover:shadow-lg" style="transition-delay:.2s">
+            <div class="info-card-inner flex flex-col items-center gap-2">
             <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0"/></svg>
             <span class="font-semibold text-sm">Personal capacitado</span>
+            </div>
           </div>
-          <div class="reveal bg-[#1A55CF] text-white rounded-xl p-6 flex flex-col items-center text-center gap-2 transition-transform duration-300 hover:scale-[1.03] hover:shadow-lg" style="transition-delay:.3s">
+          <div class="info-card reveal bg-[#1A55CF] text-white rounded-xl p-6 flex flex-col items-center text-center gap-2 transition-transform duration-300 hover:scale-[1.03] hover:shadow-lg" style="transition-delay:.3s">
+            <div class="info-card-inner flex flex-col items-center gap-2">
             <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
             <span class="font-semibold text-sm">Rápida respuesta</span>
+            </div>
           </div>
         </div>
       </div>
