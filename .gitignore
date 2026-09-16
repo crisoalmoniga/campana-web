@@ -1,0 +1,4 @@
+# Backups y borradores locales (no van al repo)
+/Backups/
+backup*.txt
+backup*.zip

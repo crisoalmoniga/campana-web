@@ -291,7 +291,6 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="h-16 flex items-center justify-between gap-4">
         <!-- Logo -->
-        <!-- TODO: reemplazar por el logo nuevo en alta que Luciana dejó en Drive -->
         <a href="#inicio" class="flex items-center gap-3 shrink-0">
           <img src="./assets/img/logo.webp" alt="Campana Fumigaciones" class="h-8 w-auto">
         </a>
@@ -701,12 +700,13 @@
         </p>
 
         <form id="contactForm"
-              action="https://formsubmit.co/info@campanafumigaciones.com.ar"
+              action="./sendmail.php"
               method="POST"
               class="space-y-4">
 
-          <input type="hidden" name="_subject" value="Nuevo mensaje desde la web - Campana Fumigaciones">
-          <input type="hidden" name="_captcha" value="false">
+          <!-- Campo trampa anti-spam: invisible para personas, los bots lo completan -->
+          <input type="text" name="website" tabindex="-1" autocomplete="off"
+                 class="absolute -left-[9999px] w-px h-px opacity-0" aria-hidden="true">
 
           <label class="block">
             <input type="text" name="nombre" placeholder="Nombre" required
@@ -949,7 +949,6 @@
   <footer id="contacto" class="bg-white border-t scroll-mt-16">
     <div class="max-w-6xl mx-auto px-6 lg:px-8 py-10">
       <!-- Logo -->
-      <!-- TODO: reemplazar por el logo nuevo en alta -->
       <div class="flex justify-center mb-6">
         <img src="./assets/img/logo.webp" alt="Campana Fumigaciones" class="h-12 w-auto">
       </div>
