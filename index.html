@@ -700,13 +700,12 @@
         </p>
 
         <form id="contactForm"
-              action="./sendmail.php"
+              action="https://formsubmit.co/info@campanafumigaciones.com.ar"
               method="POST"
               class="space-y-4">
 
-          <!-- Campo trampa anti-spam: invisible para personas, los bots lo completan -->
-          <input type="text" name="website" tabindex="-1" autocomplete="off"
-                 class="absolute -left-[9999px] w-px h-px opacity-0" aria-hidden="true">
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde la web - Campana Fumigaciones">
+          <input type="hidden" name="_captcha" value="false">
 
           <label class="block">
             <input type="text" name="nombre" placeholder="Nombre" required
